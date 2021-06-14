@@ -12,8 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $b_name = $_POST["b_name"];
     $b_description = $_POST["b_description"];
     $quantity = $_POST["quantity"];
+	$author = $_POST["author"];
+	$year = $_POST["year"];
+	$isbn = $_POST["isbn"];
+	$language = $_POST["language"];
+	$photo = $_POST["photo"];
 
-    $query = "INSERT INTO books VALUES ('$b_id', '$b_name', '$b_description', '$quantity') ";
+    $query = "INSERT INTO books VALUES ('$b_id', '$b_name', '$b_description', '$quantity', '$author', '$year', '$category', '$isbn', '$language', '$photo') ";
     
     if(mysqli_query($con,$query))
 	{
