@@ -32,6 +32,43 @@
                 <input type="number" name="quantity" min="1" max="100">
                 </td>
             </tr>
+            <tr>
+                <td>Author</td>
+                <td>
+                    <input type="text" name="author">
+                </td>
+            </tr>
+            <tr>
+                <td>year</td>
+                <td>
+                    <input type="text" name="year">
+                </td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>
+                    <input type="text" name="category">
+                </td>
+            </tr>
+            <tr>
+                <td>ISBN</td>
+                <td>
+                    <input type="text" name="isbn">
+                </td>
+            </tr>
+            <tr>
+                <td>Language</td>
+                <td>
+                    <input type="text" name="language">
+                </td>
+            </tr>
+            <tr>
+                <td>Photo</td>
+                <td>
+                <input type="file" name="photo">
+                </td>
+            </tr>
+            
             
             <tr>
             <td></td>
