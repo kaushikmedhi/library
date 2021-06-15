@@ -42,7 +42,7 @@ $name=$_GET["name"];
                      </a>
                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                          <a class="dropdown-item" href="addbook.php">Add Books</a>
-                         <a class="dropdown-item" href="#">View library status</a>
+                         <a class="dropdown-item" href="viewbook.php">View library status</a>
                          <div class="dropdown-divider"></div>
                          <a class="dropdown-item" href="#">Something else here</a>
                      </div>

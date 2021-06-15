@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantity = $_POST["quantity"];
 	$author = $_POST["author"];
 	$year = $_POST["year"];
+	$category = $_POST["category"];
 	$isbn = $_POST["isbn"];
 	$language = $_POST["language"];
 	$photo = $_POST["photo"];
