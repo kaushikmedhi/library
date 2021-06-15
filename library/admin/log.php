@@ -11,7 +11,7 @@ $result=mysqli_query($con,"select * from admin where name = '$name'");
 	if($row['password']==$password)
 	{
 		$_SESSION['name']=$name;
- 		header("Location:adminpanel.php");
+ 		header("Location:adminpanel.php?name=$name");
  	}
  	else
  	{
