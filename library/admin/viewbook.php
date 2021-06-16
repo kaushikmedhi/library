@@ -97,8 +97,8 @@ $name=$_GET["name"];
                     <td>'.$row["category"].'</td>
                     <td>'.$row["isbn"].'</td>
                     <td>'.$row["language"].'</td>
-                    <td><button><a href="editbook.php?id='.$row["b_id"].'">EDIT</a></button>
-                    <button><a href="deletebook.php?id='.$row["b_id"].'">DELETE</a></button></td>
+                    <td><button><a href="editbook.php?b_id='.$row["b_id"].'">EDIT</a></button>
+                    <button><a href="deletebook.php?b_id='.$row["b_id"].'">DELETE</a></button></td>
             ';
         } 
 
