@@ -2,12 +2,13 @@
 <?php
 
 
-$con=mysqli_connect("localhost","root1","pass","library")or die("can't connect...");
+// $con=mysqli_connect("localhost","root1","pass","library")or die("can't connect...");
+
+include '../connect.php';
 
 
-
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if($_SERVER['REQUEST_METHOD'] == 'POST') 
+{
     $b_id = $_POST["b_id"];
     $b_name = $_POST["b_name"];
     $b_description = $_POST["b_description"];
