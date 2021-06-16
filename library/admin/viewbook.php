@@ -87,7 +87,7 @@ $name=$_GET["name"];
         while ($row = mysqli_fetch_array($result)){
             echo '
                 <tr>
-                    <td>'.$row["photo"].'</td>
+                    <td><img src="'.$row['photo'].'" width="80" height="120"></td>
                     <td>'.$row["b_id"].'</td>
                     <td>'.$row["b_name"].'</td>
                     <td>'.$row["b_description"].'</td>
