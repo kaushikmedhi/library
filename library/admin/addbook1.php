@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$language = $_POST["language"];
 	$photo = $_POST["photo"];
 
-    $query = "INSERT INTO books VALUES ('$b_id', '$b_name', '$b_description', '$quantity', '$author', '$year', '$category', '$isbn', '$language', '$photo') ";
+    $query = "INSERT INTO books VALUES ('$b_id', '$b_name', '$b_description', '$quantity', '$author', '$year', '$category', '$isbn', '$photo', '$language') ";
     
     if(mysqli_query($con,$query))
 	{
