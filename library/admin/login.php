@@ -57,18 +57,18 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Admin Login</h5>
-            <form class="form-signin" >
-              <div class="form-label-group" action="log.php" method="POST">
+            <form class="form-signin"  action="log.php" method="POST">
+              <div class="form-label-group">
                 <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="password" class="form-control" placeholder="Password" required>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
               </div>
 
               
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-              <hr class="my-4">
+              <input class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+             
              
             </form>
           </div>
@@ -77,11 +77,6 @@
     </div>
   </div>
 </body>
-
-
-
-
-
 
 
 </body>
