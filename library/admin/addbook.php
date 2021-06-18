@@ -68,7 +68,7 @@ $name = $_GET["name"];
 
 
     <h1 style="text-align: center;">Input Form</h1>
-    <form action="addbook1.php" method="POST">
+    <form action="addbook1.php" method="POST" enctype="multipart/form-data">
         <table border="1" width="800" height="500" align="center">
             <tr>
                 <td>ID</td>
@@ -127,14 +127,14 @@ $name = $_GET["name"];
             <tr>
                 <td>Photo</td>
                 <td>
-                    <input type="file" name="photo">
+                    <input type="file" name="file">
                 </td>
             </tr>
 
 
             <tr>
                 <td></td>
-                <td><input type="submit" value="Add"></td>
+                <td><input type="submit" value="Add Book" name="submit"></td>
             </tr>
         </table>
     </form>
