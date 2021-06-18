@@ -73,7 +73,7 @@ $row = mysqli_fetch_array($result);
 
 
      <h1 style="text-align: center;">Edit Form</h1>
-    <form action="editbook1.php" method="POST">
+    <form action="editbook1.php" method="POST" enctype="multipart/form-data">
         <table border="1" width="800" height="500" align="center">
             <tr>
                 <td>ID</td>
@@ -132,14 +132,14 @@ $row = mysqli_fetch_array($result);
             <tr>
                 <td>Photo</td>
                 <td>
-                <input type="file" name="photo" value="<?php echo $row["photo"] ?>">
+                <input type="file" name="file" value="<?php echo $row["photo"] ?>">
                 </td>
             </tr>
             
             
             <tr>
             <td></td>
-                <td><input type="submit" value="Update"></td>
+                <td><input type="submit" value="Update" name="submit"></td>
             </tr>
         </table> 
     </form>
