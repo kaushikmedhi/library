@@ -1,11 +1,12 @@
 <?php
 session_start();
+if(!$_SESSION['name']){
+    header("LOCATION: login.php");
+}
 
-$name = $_SESSION['$name'];
+$name = $_SESSION['name'];
 
 include '../connect.php';
-
-$name = $_GET["name"];
 
 ?>
 
@@ -14,6 +15,7 @@ $name = $_GET["name"];
 
 <head>
     <title>library</title>
+    <link rel="icon" href="../image/logo.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 
