@@ -1,12 +1,14 @@
 <?php
 session_start();
+if(!$_SESSION['name']){
+    header("LOCATION: login.php");
+}
 
 $name = $_SESSION['name'];
+
 include '../connect.php';
 // $con=mysqli_connect("localhost","root1","pass","library")or die("can't connect...");
 
-
-$name = $_GET["name"];
 
 ?>
 
