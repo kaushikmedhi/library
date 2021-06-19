@@ -3,7 +3,6 @@ session_start();
 
 $name = $_SESSION['$name'];
 
-// $con=mysqli_connect("localhost","root1","pass","library")or die("can't connect...");
 include '../connect.php';
 
 $name = $_GET["name"];
@@ -68,74 +67,52 @@ $name = $_GET["name"];
 
 
 
-    <h1 style="text-align: center;">Input Form</h1>
-    <form action="addbook1.php" method="POST" enctype="multipart/form-data">
+    <h1 style="text-align: center;">Student Registration</h1>
+    <form action="addstudent1.php" method="POST">
         <table border="1" width="800" height="500" align="center">
+            
             <tr>
-                <td>ID</td>
+                <td>Name</td>
                 <td>
-                    <input type="text" name="b_id">
+                    <input type="text" name="s_name">
                 </td>
             </tr>
             <tr>
-                <td>Book Name</td>
+                <td>Password</td>
                 <td>
-                    <input type="text" name="b_name">
+                    <input type="text" name="s_password">
                 </td>
             </tr>
             <tr>
-                <td>Description</td>
+                <td>E-mail</td>
                 <td>
-                    <input type="text" name="b_description">
+                    <input type="email" name="s_email">
                 </td>
             </tr>
             <tr>
-                <td>Quantity</td>
+                <td>s_phone</td>
                 <td>
-                    <input type="number" name="quantity" min="1" max="100">
+                    <input type="text" name="s_phone">
                 </td>
             </tr>
             <tr>
-                <td>Author</td>
+                <td>Address</td>
                 <td>
-                    <input type="text" name="author">
+                    <input type="text" name="s_address">
                 </td>
             </tr>
             <tr>
-                <td>year</td>
+                <td>Department</td>
                 <td>
-                    <input type="text" name="year">
+                    <input type="text" name="department">
                 </td>
             </tr>
-            <tr>
-                <td>Category</td>
-                <td>
-                    <input type="text" name="category">
-                </td>
-            </tr>
-            <tr>
-                <td>ISBN</td>
-                <td>
-                    <input type="text" name="isbn">
-                </td>
-            </tr>
-            <tr>
-                <td>Language</td>
-                <td>
-                    <input type="text" name="language">
-                </td>
-            </tr>
-            <tr>
-                <td>Photo</td>
-                <td>
-                    <input type="file" name="file">
-                </td>
-            </tr>
+           
 
 
             <tr>
                 <td></td>
-                <td><input type="submit" value="Add Book" name="submit"></td>
+                <td><input type="submit" value="Add Student" name="submit"></td>
             </tr>
         </table>
     </form>
@@ -145,4 +122,3 @@ $name = $_GET["name"];
 
 </body>
 
-</html>

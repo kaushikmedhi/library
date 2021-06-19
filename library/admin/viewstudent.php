@@ -1,22 +1,30 @@
 <?php
 session_start();
 
-$name = $_SESSION['$name'];
-
-// $con=mysqli_connect("localhost","root1","pass","library")or die("can't connect...");
 include '../connect.php';
-
-$name = $_GET["name"];
-
 ?>
 
 <html>
 
 
+
+<title>library</title>
+
 <head>
-    <title>library</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+
+
 </head>
+
+
 
 <body>
     <div class="container">
@@ -64,85 +72,72 @@ $name = $_GET["name"];
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
+    <div class="container my-4">
+
+        <h1 style="text-align: center;">View Student</h1>
+    </div>
 
 
+    <div class="container my-4">
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>E-mail</td>
+                    <td>Phone</td>
+                    <td>Address</td>
+                    <td>Department</td>
+                    <td>Registration date</td>
+                    <td>Update date</td>
+                    <td>Action</td>
+                    </tr>
+            </thead>
+
+            <tbody>
+                <?php
+
+                $result = mysqli_query($con, "select * from student");
+                while ($row = mysqli_fetch_array($result)) {
+                    echo '
+                <tr>
+                    <td>' . $row["s_id"] . '</td>
+                    <td>' . $row["s_name"] . '</td>
+                    <td>' . $row["s_email"] . '</td>
+                    <td>' . $row["s_phone"] . '</td>
+                    <td>' . $row["s_address"] . '</td>
+                    <td>' . $row["department"] . '</td>
+                    <td>' . $row["reg_date"] . '</td>
+                    <td>' . $row["update_date"] . '</td>
+                    <td><button><a href="deletestudent.php?s_id=' . $row["s_id"] . '">DELETE</a></button></td>
+                </tr>
+            ';
+                }
+                ?>
+            </tbody>
 
 
-    <h1 style="text-align: center;">Input Form</h1>
-    <form action="addbook1.php" method="POST" enctype="multipart/form-data">
-        <table border="1" width="800" height="500" align="center">
-            <tr>
-                <td>ID</td>
-                <td>
-                    <input type="text" name="b_id">
-                </td>
-            </tr>
-            <tr>
-                <td>Book Name</td>
-                <td>
-                    <input type="text" name="b_name">
-                </td>
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>
-                    <input type="text" name="b_description">
-                </td>
-            </tr>
-            <tr>
-                <td>Quantity</td>
-                <td>
-                    <input type="number" name="quantity" min="1" max="100">
-                </td>
-            </tr>
-            <tr>
-                <td>Author</td>
-                <td>
-                    <input type="text" name="author">
-                </td>
-            </tr>
-            <tr>
-                <td>year</td>
-                <td>
-                    <input type="text" name="year">
-                </td>
-            </tr>
-            <tr>
-                <td>Category</td>
-                <td>
-                    <input type="text" name="category">
-                </td>
-            </tr>
-            <tr>
-                <td>ISBN</td>
-                <td>
-                    <input type="text" name="isbn">
-                </td>
-            </tr>
-            <tr>
-                <td>Language</td>
-                <td>
-                    <input type="text" name="language">
-                </td>
-            </tr>
-            <tr>
-                <td>Photo</td>
-                <td>
-                    <input type="file" name="file">
-                </td>
-            </tr>
-
-
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Add Book" name="submit"></td>
-            </tr>
         </table>
-    </form>
+    </div>
 
+    <div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#myTable').DataTable({
+                    responsive: true
+                });
+
+            });
+        </script>
+    </div>
 </body>
-
-</body>
-
 </html>

@@ -47,9 +47,10 @@ $row = mysqli_fetch_array($result);
                      </a>
                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                          <a class="dropdown-item" href="addbook.php">Add Books</a>
-                         <a class="dropdown-item" href="viewbook.php">View library status</a>
-                         <div class="dropdown-divider"></div>
-                         <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="viewbook.php">View library status</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="addstudent.php">Add Student</a>
+                        <a class="dropdown-item" href="viewstudent.php">View Student</a>
                      </div>
                  </li>
                  <li class="nav-item">
