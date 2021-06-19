@@ -114,7 +114,8 @@ include '../connect.php';
                     <td>' . $row["department"] . '</td>
                     <td>' . $row["reg_date"] . '</td>
                     <td>' . $row["update_date"] . '</td>
-                    <td><button><a href="deletestudent.php?s_id=' . $row["s_id"] . '">DELETE</a></button></td>
+                    <td><button><a href="editstudent.php?s_id=' . $row["s_id"] . '">EDIT</a></button>
+                        <button><a href="deletestudent.php?s_id=' . $row["s_id"] . '">DELETE</a></button></td>
                 </tr>
             ';
                 }
