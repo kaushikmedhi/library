@@ -26,55 +26,76 @@ $row = mysqli_fetch_array($result);
 
 
 
-    <h1 style="text-align: center;">Student Registration</h1>
+    <h1 style="text-align: center;">Update Student</h1>
     <form action="editstudent1.php" method="POST">
-        <table border="1" width="800" height="500" align="center">
-            
-        <tr>
-                <td>ID</td>
-                <td>
-                    <input type="text" name="s_id"  value="<?php echo $row["s_id"] ?>" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>
-                    <input type="text" name="s_name"  value="<?php echo $row["s_name"] ?>">
-                </td>
-            </tr>
-           
-            <tr>
-                <td>E-mail</td>
-                <td>
-                    <input type="email" name="s_email"  value="<?php echo $row["s_email"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>s_phone</td>
-                <td>
-                    <input type="text" name="s_phone"  value="<?php echo $row["s_phone"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td>
-                    <input type="text" name="s_address"  value="<?php echo $row["s_address"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Department</td>
-                <td>
-                    <input type="text" name="department"  value="<?php echo $row["department"] ?>">
-                </td>
-            </tr>
-           
+       
+
+    <div class="row g-2">
+
+<div class="col-md">
+    <div class="form-floating mb-3">
+
+        <input type="text" class="form-control" name="s_id" id="id" placeholder="ID" value="<?php echo $row["s_id"] ?>" readonly>
+        <label for="id"> ID </label>
+    </div>
+</div>
+    </div>
+
+    <div class="row g-2">
+
+<div class="col-md">
+    <div class="form-floating mb-3">
+
+        <input type="text" class="form-control" name="s_name" id="name" placeholder="Name" value="<?php echo $row["s_name"] ?>">
+        <label for="name"> Name </label>
+    </div>
+</div>
+</div>
 
 
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Update Student" name="submit"></td>
-            </tr>
-        </table>
+<div class="row g-2">
+<div class="col-md">
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" name="s_email" id="email" placeholder="E-mail" value="<?php echo $row["s_email"] ?>">
+        <label for="email"> E-mail </label>
+
+    </div>
+</div>
+
+
+<div class="col-md">
+    <div class="form-floating mb-3">
+
+        <input type="text" class="form-control" name="s_phone" id="phone" placeholder="Phone" value="<?php echo $row["s_phone"] ?>">
+        <label for="phone"> Phone </label>
+    </div>
+</div>
+</div>
+
+<div class="row g-2">
+<div class="col-md">
+    <div class="form-floating mb-3">
+
+        <input type="text" class="form-control" name="s_address" id="address" placeholder="Address" value="<?php echo $row["s_address"] ?>">
+        <label for="address"> Address </label>
+    </div>
+</div>
+
+
+
+<div class="col-md">
+    <div class="form-floating mb-3">
+
+        <input type="text" class="form-control" name="department" id="department" placeholder="Department" value="<?php echo $row["department"] ?>">
+        <label for="department"> Department </label>
+    </div>
+</div>
+</div>
+
+
+
+<input type="submit" class="btn btn-md btn-success" value="Update Student" name="submit">
+
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

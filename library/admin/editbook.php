@@ -29,75 +29,100 @@ $row = mysqli_fetch_array($result);
 
      <h1 style="text-align: center;">Edit Form</h1>
     <form action="editbook1.php" method="POST" enctype="multipart/form-data">
-        <table border="1" width="800" height="500" align="center">
-            <tr>
-                <td>ID</td>
-                <td>
-                    <input type="text" name="b_id" value="<?php echo $row["b_id"] ?>" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>Book Name</td>
-                <td>
-                    <input type="text" name="b_name" value="<?php echo $row["b_name"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>
-                    <input type="text" name="b_description" value="<?php echo $row["b_description"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Quantity</td>
-                <td>
-                <input type="number" name="quantity" min="1" max="100" value="<?php echo $row["quantity"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Author</td>
-                <td>
-                    <input type="text" name="author" value="<?php echo $row["author"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>year</td>
-                <td>
-                    <input type="text" name="year" value="<?php echo $row["year"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Category</td>
-                <td>
-                    <input type="text" name="category" value="<?php echo $row["category"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>ISBN</td>
-                <td>
-                    <input type="text" name="isbn" value="<?php echo $row["isbn"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Language</td>
-                <td>
-                    <input type="text" name="language" value="<?php echo $row["language"] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Photo</td>
-                <td>
-                <input type="file" name="file" value="<?php echo $row["photo"] ?>">
-                </td>
-            </tr>
-            
-            
-            <tr>
-            <td></td>
-                <td><input type="submit" value="Update" name="submit"></td>
-            </tr>
-        </table> 
+        
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="b_id" id="book_id" placeholder="Book ID" value="<?php echo $row["b_id"] ?>" readonly>
+                <label for="book_id"> ID </label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="b_name" id="book_name" placeholder="Bookname"value="<?php echo $row["b_name"] ?>">
+                <label for="book_name"> Book Name </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="b_description" id="description" placeholder="Description" value="<?php echo $row["b_description"] ?>">
+                <label for="description"> Description </label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" name="quantity" min="1" max="100" id="quantity" placeholder="Quantity" value="<?php echo $row["quantity"] ?>">
+                <label for="quantity"> Quantity </label>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="author" id="author" placeholder="Author" value="<?php echo $row["author"] ?>">
+                <label for="author"> Author </label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="year" id="year" placeholder="Year of publishing" value="<?php echo $row["year"] ?>">
+                <label for="year"> year </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="category" id="category" placeholder="Category" value="<?php echo $row["category"] ?>">
+                <label for="category"> Category </label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="form-floating mb-3 ">
+
+                <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN" value="<?php echo $row["isbn"] ?>">
+                <label for="isbn"> ISBN </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="language" id="language" placeholder="Language" value="<?php echo $row["language"] ?>">
+                <label for="language"> Language </label>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div><label for="file"> Photo </label>
+
+                <input type="file" class="form-control" name="file" id="file" value="<?php echo $row["photo"] ?>">
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" class="btn btn-md btn-success" value="Update Book" name="submit">
+
     </form>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -111,3 +136,5 @@ $row = mysqli_fetch_array($result);
 
      </body>
  </html> 
+
+

@@ -24,52 +24,70 @@ include 'main.php';
 
     <h1 style="text-align: center;">Student Registration</h1>
     <form action="addstudent1.php" method="POST">
-        <table border="1" width="800" height="500" align="center">
-            
-            <tr>
-                <td>Name</td>
-                <td>
-                    <input type="text" name="s_name">
-                </td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td>
-                    <input type="text" name="s_password">
-                </td>
-            </tr>
-            <tr>
-                <td>E-mail</td>
-                <td>
-                    <input type="email" name="s_email">
-                </td>
-            </tr>
-            <tr>
-                <td>s_phone</td>
-                <td>
-                    <input type="text" name="s_phone">
-                </td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td>
-                    <input type="text" name="s_address">
-                </td>
-            </tr>
-            <tr>
-                <td>Department</td>
-                <td>
-                    <input type="text" name="department">
-                </td>
-            </tr>
-           
+       
+    <div class="row g-2">
+
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="s_name" id="name" placeholder="Name">
+                <label for="name"> Name </label>
+            </div>
+        </div>
+    
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="s_password" id="password" placeholder="Password">
+                <label for="password"> Password </label>
+            </div>
+        </div>
+     </div>
 
 
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Add Student" name="submit"></td>
-            </tr>
-        </table>
+     <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="s_email" id="email" placeholder="E-mail">
+                <label for="email"> E-mail </label>
+
+            </div>
+        </div>
+   
+
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="s_phone" id="phone" placeholder="Phone">
+                <label for="phone"> Phone </label>
+            </div>
+        </div>
+     </div>
+
+     <div class="row g-2">
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="s_address" id="address" placeholder="Address">
+                <label for="address"> Address </label>
+            </div>
+        </div>
+   
+
+   
+        <div class="col-md">
+            <div class="form-floating mb-3">
+
+                <input type="text" class="form-control" name="department" id="department" placeholder="Department">
+                <label for="department"> Department </label>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <input type="submit" class="btn btn-md btn-success" value="Add Student" name="submit">
+
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
