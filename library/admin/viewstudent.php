@@ -11,7 +11,6 @@ include 'main.php';
 ?>
 
 
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
@@ -24,7 +23,7 @@ include 'main.php';
 
     <div class="container my-4">
         <table class="table" id="myTable">
-            <thead>
+            <thead class="thead">
                 <tr>
                     <td>ID</td>
                     <td>Name</td>
@@ -53,8 +52,8 @@ include 'main.php';
                     <td>' . $row["department"] . '</td>
                     <td>' . $row["reg_date"] . '</td>
                     <td>' . $row["update_date"] . '</td>
-                    <td><button><a href="editstudent.php?s_id=' . $row["s_id"] . '">EDIT</a></button>
-                        <button><a href="deletestudent.php?s_id=' . $row["s_id"] . '">DELETE</a></button></td>
+                    <td><button class="btn btn-primary"><a href="editstudent.php?s_id=' . $row["s_id"] . '">EDIT</a></button>
+                        <button class="btn btn-danger"><a href="deletestudent.php?s_id=' . $row["s_id"] . '">DELETE</a></button></td>
                 </tr>
             ';
                 }

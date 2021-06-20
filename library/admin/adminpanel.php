@@ -71,7 +71,7 @@ $rs2 = mysqli_query($con, $sql2);
 
 <div class="container my-4">
 <table class="table" id="myTable">
-    <thead>
+    <thead class="thead">
         <tr>
             <td>ID</td>
             <td>Name</td>
@@ -100,8 +100,8 @@ $rs2 = mysqli_query($con, $sql2);
             <td>' . $row["department"] . '</td>
             <td>' . $row["reg_date"] . '</td>
             <td>' . $row["update_date"] . '</td>
-            <td><button><a href="editstudent.php?s_id=' . $row["s_id"] . '">EDIT</a></button>
-                <button><a href="deletestudent.php?s_id=' . $row["s_id"] . '">DELETE</a></button></td>
+            <td><button class="btn btn-primary"><a href="editstudent.php?s_id=' . $row["s_id"] . '">EDIT</a></button>
+            <button class="btn btn-danger"><a href="deletestudent.php?s_id=' . $row["s_id"] . '">DELETE</a></button></td>
         </tr>
     ';
         }
@@ -122,7 +122,7 @@ $rs2 = mysqli_query($con, $sql2);
 
 <div class="container my-4">
 <table class="table" id="myTable2">
-    <thead>
+    <thead class="thead">
         <tr>
             <td>Photo</td>
             <td>ID</td>
@@ -155,8 +155,9 @@ $rs2 = mysqli_query($con, $sql2);
             <td>' . $row["category"] . '</td>
             <td>' . $row["isbn"] . '</td>
             <td>' . $row["language"] . '</td>
-            <td><button><a href="editbook.php?b_id=' . $row["b_id"] . '">EDIT</a></button>
-            <button><a href="deletebook.php?b_id=' . $row["b_id"] . '">DELETE</a></button></td>
+            <td><button class="btn btn-primary"><a href="editbook.php?b_id=' . $row["b_id"] . '">EDIT</a></button>
+                    <button class="btn btn-danger"><a href="deletebook.php?b_id=' . $row["b_id"] . '">DELETE</a></button></td>
+                    </tr>
     ';
         }
         ?>

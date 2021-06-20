@@ -11,9 +11,6 @@ include 'main.php';
 ?>
 
 
-                       
-
-
 
     <div class="container my-4">
 
@@ -23,7 +20,7 @@ include 'main.php';
 
     <div class="container my-4">
         <table class="table" id="myTable">
-            <thead>
+            <thead class="thead">
                 <tr>
                     <td>Photo</td>
                     <td>ID</td>
@@ -56,8 +53,9 @@ include 'main.php';
                     <td>' . $row["category"] . '</td>
                     <td>' . $row["isbn"] . '</td>
                     <td>' . $row["language"] . '</td>
-                    <td><button><a href="editbook.php?b_id=' . $row["b_id"] . '">EDIT</a></button>
-                    <button><a href="deletebook.php?b_id=' . $row["b_id"] . '">DELETE</a></button></td>
+                    <td><button class="btn btn-primary"><a href="editbook.php?b_id=' . $row["b_id"] . '">EDIT</a></button>
+                    <button class="btn btn-danger"><a href="deletebook.php?b_id=' . $row["b_id"] . '">DELETE</a></button></td>
+                    </tr>
             ';
                 }
                 ?>
