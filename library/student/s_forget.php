@@ -5,7 +5,7 @@
 
 <body>
    
-    <h1 style="text-align: center;">Login Form</h1>
+    <h1 style="text-align: center;">Reset Password</h1>
     <form action="log.php" method="POST">
         <table  style="text-align: center;" border="1" width="800" height="300" align="center">
             <tr>
