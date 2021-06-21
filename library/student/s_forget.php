@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Login</title>
+        <title>Forget Password</title>
     </head>
 
 <body>
@@ -9,16 +9,16 @@
     <form action="log.php" method="POST">
         <table  style="text-align: center;" border="1" width="800" height="300" align="center">
             <tr>
-                <td>Name</td>
+                <td>Email :</td>
                 <td>
-                    <input type="text" name="name">
+                    <input type="email" name="email">
                 </td>
             </tr>
             
             <tr>
-                <td>Password</td>
+                <td>Library ID</td>
                 <td>
-                    <input type="text" name="password">
+                    <input type="text" name="l_id">
                 </td>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
                 <td><input type="submit"></td>
             </tr>
         </table> 
-        <a href="s_forget.php">FORGET PASSWORD ?</a>
+        
     </form>
 
 
