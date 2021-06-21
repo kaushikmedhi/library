@@ -53,7 +53,7 @@ include 'main.php';
                     <td>' . $row["reg_date"] . '</td>
                     <td>' . $row["update_date"] . '</td>
                     <td><button class="btn btn-primary"><a href="editstudent.php?s_id=' . $row["s_id"] . '">EDIT</a></button>
-                        <button class="btn btn-danger"><a href="deletestudent.php?s_id=' . $row["s_id"] . '">DELETE</a></button></td>
+                        <button class="btn btn-danger"><a href="deletestudent.php?s_id=' . $row["s_id"] . '" class="action">DELETE</a></button></td>
                 </tr>
             ';
                 }

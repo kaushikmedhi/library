@@ -54,7 +54,7 @@ include 'main.php';
                     <td>' . $row["isbn"] . '</td>
                     <td>' . $row["language"] . '</td>
                     <td><button class="btn btn-primary"><a href="editbook.php?b_id=' . $row["b_id"] . '">EDIT</a></button>
-                    <button class="btn btn-danger"><a href="deletebook.php?b_id=' . $row["b_id"] . '">DELETE</a></button></td>
+                    <button class="btn btn-danger"><a href="deletebook.php?b_id=' . $row["b_id"] . '" class="action">DELETE</a></button></td>
                     </tr>
             ';
                 }
