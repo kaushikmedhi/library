@@ -25,6 +25,7 @@ $row = mysqli_fetch_array($result);
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
 <center>
 <form name="chngpwd" action="changepass1.php" method="post" onSubmit="return valid();">
 <div style="width:500px;">
@@ -85,11 +86,11 @@ return true;
 }
 </script>
 <?php
-if( $_GET['ok'] == '1') {
+if( $_GET['pwd'] == 'changed') {
    echo '<script>  alert("Password successfully changed!");   </script>';
 }
-else if( $_GET['ok'] == '0') {
-   echo '<script>  alert("Something went wrong. Try again!");   </script>';
+else if( $_GET['pwd'] == 'nochanged') {
+   echo '<script>  alert("Old password is incorrect. Try again!");   </script>';
 }else{
 
 }
@@ -97,5 +98,5 @@ else if( $_GET['ok'] == '0') {
   
 </body>
 
-</body>
+</html>
 

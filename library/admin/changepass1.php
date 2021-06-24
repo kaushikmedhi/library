@@ -1,22 +1,26 @@
 <?php
-session_start();
-include("../connect.php");
-if(isset($_POST['Submit']))
-{
- $oldpass=($_POST['opwd']);
- $aname=$_SESSION['name'];
- $newpassword=($_POST['npwd']);
-mysqli_query($con,"SELECT password FROM admin where password='$oldpass' && name='$aname'");
-
-
- $ok=mysqli_query($con,"update admin set password=' $newpassword' where name='$aname'");
-if ($ok){
-    header("location:changepass.php?ok=1");
-}
-else{
-    header("location:changepass.php?ok=0");
-}
-
-
-}
+	include "../connect.php";
+	session_start();
+	$name=$_SESSION['name'];
+	$oldp=$_POST["opwd"];
+	$newp=$_POST["npwd"];
+	$result=mysqli_query($con,"Select password from admin where name='$name'");
+	$row=mysqli_fetch_array($result);
+	$op=$row["password"];
+	if($oldp==$op)
+	{
+		$rec=mysqli_query($con,"Update admin set password='$newp' where name='$name'");
+		if($rec)
+		{
+			header("location:changepass.php?pwd=changed");	
+		}
+		else
+		{
+			echo $mysqli_error($con);	
+		}
+	}
+	else
+	{
+		header("location:changepass.php?pwd=nochanged");	
+	}
 ?>
