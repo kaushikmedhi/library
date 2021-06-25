@@ -7,11 +7,11 @@ include 'main.php';
 
 
 
-$b_id=$_GET["b_id"];
+$isbn=$_GET["isbn"];
 
     
 
-$result = mysqli_query($con, "select * from books where b_id=$b_id");
+$result = mysqli_query($con, "select * from books where isbn=$isbn");
 $row = mysqli_fetch_array($result);
 
 ?>
@@ -31,24 +31,27 @@ $row = mysqli_fetch_array($result);
     <form action="editbook1.php" method="POST" enctype="multipart/form-data">
         
     <div class="row g-2">
-        <div class="col-md">
-            <div class="form-floating mb-3">
+       
+    <div class="col-md">
+            <div class="form-floating mb-3 ">
 
-                <input type="text" class="form-control" name="b_id" id="book_id" placeholder="Book ID" value="<?php echo $row["b_id"] ?>" readonly>
-                <label for="book_id"> ID </label>
+                <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN" value="<?php echo $row["isbn"] ?>" readonly>
+                <label for="isbn"> ISBN </label>
             </div>
         </div>
+ </div>
 
-        <div class="col-md">
+    <div class="row g-2">
+
+    <div class="col-md">
             <div class="form-floating mb-3">
 
                 <input type="text" class="form-control" name="b_name" id="book_name" placeholder="Bookname"value="<?php echo $row["b_name"] ?>">
                 <label for="book_name"> Book Name </label>
             </div>
         </div>
-    </div>
+   
 
-    <div class="row g-2">
         <div class="col-md">
             <div class="form-floating mb-3">
 
@@ -57,16 +60,18 @@ $row = mysqli_fetch_array($result);
             </div>
         </div>
 
-        <div class="col-md">
+        </div>
+
+        <div class="row g-2">
+    <div class="col-md">
             <div class="form-floating mb-3">
                 <input type="number" class="form-control" name="quantity" min="1" max="100" id="quantity" placeholder="Quantity" value="<?php echo $row["quantity"] ?>">
                 <label for="quantity"> Quantity </label>
 
             </div>
         </div>
-    </div>
+   
 
-    <div class="row g-2">
         <div class="col-md">
             <div class="form-floating mb-3">
 
@@ -74,17 +79,19 @@ $row = mysqli_fetch_array($result);
                 <label for="author"> Author </label>
             </div>
         </div>
+        </div>
 
-        <div class="col-md">
+    <div class="row g-2">
+
+    <div class="col-md">
             <div class="form-floating mb-3">
 
                 <input type="text" class="form-control" name="year" id="year" placeholder="Year of publishing" value="<?php echo $row["year"] ?>">
                 <label for="year"> year </label>
             </div>
         </div>
-    </div>
+    
 
-    <div class="row g-2">
         <div class="col-md">
             <div class="form-floating mb-3">
 
@@ -93,13 +100,6 @@ $row = mysqli_fetch_array($result);
             </div>
         </div>
 
-        <div class="col-md">
-            <div class="form-floating mb-3 ">
-
-                <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN" value="<?php echo $row["isbn"] ?>">
-                <label for="isbn"> ISBN </label>
-            </div>
-        </div>
     </div>
 
     <div class="row g-2">

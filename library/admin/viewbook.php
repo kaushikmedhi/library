@@ -23,14 +23,13 @@ include 'main.php';
             <thead class="thead">
                 <tr>
                     <td>Photo</td>
-                    <td>ID</td>
+                    <td>ISBN</td>
                     <td>Name</td>
                     <td>Description</td>
                     <td>quantity</td>
                     <td>Author</td>
                     <td>Year of publication</td>
                     <td>Category</td>
-                    <td>ISBN</td>
                     <td>Language</td>
                     <td>Action</td>
                 </tr>
@@ -44,17 +43,16 @@ include 'main.php';
                     echo '
                 <tr>
                     <td><img src="' . $row['photo'] . '" width="80" height="120"></td>
-                    <td>' . $row["b_id"] . '</td>
+                    <td>' . $row["isbn"] . '</td>
                     <td>' . $row["b_name"] . '</td>
                     <td>' . $row["b_description"] . '</td>
                     <td>' . $row["quantity"] . '</td>
                     <td>' . $row["author"] . '</td>
                     <td>' . $row["year"] . '</td>
                     <td>' . $row["category"] . '</td>
-                    <td>' . $row["isbn"] . '</td>
                     <td>' . $row["language"] . '</td>
-                    <td><button class="btn btn-primary"><a href="editbook.php?b_id=' . $row["b_id"] . '">EDIT</a></button>
-                    <button class="btn btn-danger"><a href="deletebook.php?b_id=' . $row["b_id"] . '" class="action">DELETE</a></button></td>
+                    <td><button class="btn btn-primary"><a href="editbook.php?isbn=' . $row["isbn"] . '">EDIT</a></button>
+                    <button class="btn btn-danger"><a href="deletebook.php?isbn=' . $row["isbn"] . '" class="action">DELETE</a></button></td>
                     </tr>
             ';
                 }
