@@ -3,33 +3,28 @@
 include '../connect.php';
 
 $b_id = $_POST["b_id"];
-$sname = $_POST["sname"];
-$qty = $_POST["qty"];
+$s_id = $_POST["s_id"];
 
+$issue_date = date("Y-m-d");
+$return_date =  date('Y-m-d', strtotime($issue_date . ' + 3 month'));
 
- $result = mysqli_query($con, "SELECT `s_id` FROM `student` WHERE `student`.`s_name` = '$sname'");
- $row = mysqli_fetch_array($result);
- $s_id = $row['s_id'];
+echo $issue_date;
+echo $return_date;
+
 
 
 
 if (isset($_POST['submit'])) {
 
-				$query = "INSERT INTO books_issue() VALUES (null,'$b_id', '$s_id', '$qty', CURRENT_TIMESTAMP)";
+	$query = "INSERT INTO book_issue VALUES ('$b_id', '$s_id', '$issue_date', '$return_date' )";
 
-				if (mysqli_query($con, $query)) 
-				{
-					 header("location:issuebook.php");
-					$success = "Success";
-				} 
-				else
-				{
-					echo mysqli_error($con);
-					$success = "unsuccess";
-				}
+	if (mysqli_query($con, $query)) {
+		header("location:issuebook.php");
+		$success = "Success";
+	} else {
+		echo mysqli_error($con);
+		$success = "unsuccess";
+	}
 
-				echo $success;
-			}
-			
-			
-?>
+	echo $success;
+}
