@@ -150,6 +150,15 @@ CREATE TABLE IF NOT EXISTS `student` (
 
 INSERT INTO `student` (`s_id`, `s_name`, `s_email`, `s_phone`, `s_address`, `department`) VALUES
 (1444, 'Kaushik Medhi', 'k@m.com', 78998798, 'JKJSHkshKJSH', 'MCA');
+
+
+ALTER TABLE `book_status`
+  ADD CONSTRAINT `book_status_ibfk_1` FOREIGN KEY (`isbn`) REFERENCES `books` (`isbn`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+ALTER TABLE `book_issue`
+  ADD CONSTRAINT `book_issue_ibfk_1` FOREIGN KEY (`b_id`) REFERENCES `book_status` (`b_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `book_issue_ibfk_2` FOREIGN KEY (`s_id`) REFERENCES `student` (`s_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
