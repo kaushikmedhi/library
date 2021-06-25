@@ -27,7 +27,7 @@ $rs2 = mysqli_query($con, $sql2);
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Total Students: <?php echo $result[0]; ?> </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="viewstudent.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@ $rs2 = mysqli_query($con, $sql2);
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">Total books: <?php echo $result2[0]; ?></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="viewbook.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
