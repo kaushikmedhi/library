@@ -3,7 +3,6 @@
 
 include '../connect.php';
 
-$b_id = $_POST["b_id"];
 $b_name = $_POST["b_name"];
 $b_description = $_POST["b_description"];
 $quantity = $_POST["quantity"];
@@ -35,10 +34,22 @@ if (isset($_POST['submit'])) {
 				$filedestination = 'uploads/' . $filenamenew;
 				move_uploaded_file($filetemp, $filedestination);
 
-				$query = "INSERT INTO books VALUES ('$b_id', '$b_name', '$b_description', '$quantity', '$author', '$year', '$category', '$isbn', '$filedestination', '$language') ";
+				$query = "INSERT INTO books VALUES ('$b_name', '$b_description', '$quantity', '$author', '$year', '$category', '$isbn', '$filedestination', '$language') ";
+
 
 				if (mysqli_query($con, $query)) {
-					header("location:viewbook.php");
+
+					for ($i = 0; $i < $quantity; $i++) {
+						$randomid = (rand(100000, 999999));
+
+						$query2 = "INSERT INTO book_status VALUES ('$randomid', '$isbn', 0)";
+						$result = mysqli_query($con, $query2);
+
+						if ($result) {
+							echo '<script>alert("Records inserted successfully")</script>';
+							header("location:viewbook.php");
+						}
+					}
 				} else {
 					echo mysqli_error($con);
 				}

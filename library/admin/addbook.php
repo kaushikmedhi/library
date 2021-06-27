@@ -25,10 +25,10 @@ include 'main.php';
 
     <div class="row g-2">
         <div class="col-md">
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 ">
 
-                <input type="text" class="form-control" name="b_id" id="book_id" placeholder="Book ID">
-                <label for="book_id"> ID </label>
+                <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN">
+                <label for="isbn"> ISBN </label>
             </div>
         </div>
 
@@ -85,17 +85,6 @@ include 'main.php';
                 <label for="category"> Category </label>
             </div>
         </div>
-
-        <div class="col-md">
-            <div class="form-floating mb-3 ">
-
-                <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN">
-                <label for="isbn"> ISBN </label>
-            </div>
-        </div>
-    </div>
-
-    <div class="row g-2">
         <div class="col-md">
             <div class="form-floating mb-3">
 
@@ -104,15 +93,27 @@ include 'main.php';
             </div>
         </div>
 
+    </div>
+
+    <div class="row g-2">
+
+
         <div class="col-md">
             <div><label for="file"> Photo </label>
 
                 <input type="file" class="form-control" name="file" id="file">
             </div>
         </div>
+        <div class="col-md">
+            <input type="hidden" name="" class="form-control">
+        </div>
     </div>
-
-    <input type="submit" class="btn btn-md btn-success" value="Add Book" name="submit">
+    <div class="row g-2">
+        <div class="col-md">
+            <input type="submit" class="btn btn-md btn-success form-control" value="Add Book" name="submit">
+        </div>
+        <div class="col-md">
+        </div>
 
 </form>
 
