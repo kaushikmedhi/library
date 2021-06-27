@@ -18,6 +18,7 @@ include 'main.php';
 </div>
 
 
+<<<<<<< HEAD
 <div class="container my-4">
     <table class="table" id="myTable">
         <thead class="thead">
@@ -43,13 +44,40 @@ include 'main.php';
                 echo '
                 <tr>
                     <td><img src="' . $row['photo'] . '" width="80" height="120"></td>
+=======
+    <div class="container my-4">
+        <table class="table" id="myTable">
+            <thead class="thead">
+                <tr>
+                    <td>Photo</td>
+                    <td>ISBN</td>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>quantity</td>
+                    <td>Author</td>
+                    <td>Year of publication</td>
+                    <td>Category</td>
+                    <td>Language</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
+
+                $result = mysqli_query($con, "select * from books");
+                while ($row = mysqli_fetch_array($result)) {
+                    echo '
+                <tr>
+                    <td><img src="' . $row['photo'] . '" width="80" height="120"></td>
+                    <td>' . $row["isbn"] . '</td>
+>>>>>>> 94b68dbfb6232410064c7bbcd37ce7f73eb88c5e
                     <td>' . $row["b_name"] . '</td>
                     <td>' . $row["b_description"] . '</td>
                     <td>' . $row["quantity"] . '</td>
                     <td>' . $row["author"] . '</td>
                     <td>' . $row["year"] . '</td>
                     <td>' . $row["category"] . '</td>
-                    <td>' . $row["isbn"] . '</td>
                     <td>' . $row["language"] . '</td>
                     <td><button class="btn btn-primary"><a href="editbook.php?isbn=' . $row["isbn"] . '">EDIT</a></button>
                     <button class="btn btn-danger"><a href="deletebook.php?isbn=' . $row["isbn"] . '" class="action">DELETE</a></button></td>
