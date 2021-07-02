@@ -31,6 +31,7 @@ include 'main.php';
 
 
   <form class="form-issuebook" action="issuebook1.php" method="POST">
+   
     <div class="form-floating mb-3">
       <input type="text" name="b_id" class="form-control" onkeyup="GetDetail(this.value)" placeholder="Enter the book id">
       <label for="b_id">Book ID</label>
@@ -67,7 +68,7 @@ include 'main.php';
 
     <div class="form-floating mb-3">
       <input type="text" name="department" id="department" class="form-control readonly" placeholder='department' value="" required>
-      <label for="department">Category</label>
+      <label for="department">Department</label>
     </div>
 
     <input class="btn btn-md btn-primary btn-block text-uppercase" name="submit" type="submit"><br><br>
