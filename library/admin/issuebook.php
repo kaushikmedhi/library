@@ -23,6 +23,12 @@ include 'main.php';
 
 <body>
 
+<style>
+.col{
+  margin: 20px;
+}
+</style>
+
   <script src="https://code.jquery.com/jquery-3.2.1.min.js">
   </script>
 
@@ -31,42 +37,54 @@ include 'main.php';
 
 
   <form class="form-issuebook" action="issuebook1.php" method="POST">
-   
-    <div class="form-floating mb-3">
+  
+   <div class="row">
+
+    <div class="col">
       <input type="text" name="b_id" class="form-control" onkeyup="GetDetail(this.value)" placeholder="Enter the book id">
-      <label for="b_id">Book ID</label>
-    </div>
-
-    <div class="form-floating mb-3">
-      <input type="text" name="isbn" id="isbn" class="form-control-plaintext readonly" placeholder='ISBN' value="" required>
       
     </div>
 
-    <div class="form-floating mb-3">
-      <input type="text" name="name" id="name" class="form-control-plaintext readonly" placeholder='Book Name' value="" required>
-      
-    </div>
-
-    <div class="form-floating mb-3">
-      <input type="text" name="category" id="category" class="form-control-plaintext readonly" placeholder='Category' value="" required>
-    </div>
-
-    <div style="width: 100%; height: 2px; background-color: gray; margin-top:30px; margin-bottom:30px;"></div>
-
-    <div class="form-floating mb-3">
+    <div class="col">
       <input type="text" name="s_id" class="form-control" onkeyup="GetStudent(this.value)" placeholder="Student Id">
-      <label for="s_id">Student ID</label>
+      
     </div>
 
+   </div>
 
-    <div class="form-floating mb-3">
-      <input type="text" name="s_name" id="s_name" class="form-control-plaintext readonly" placeholder='Student Name' value="" required>
+   <div class="row">
+
+    <div class="col">
+    ISBN:
+      <input type="text" name="isbn" id="isbn" class="form-control-plaintext readonly" placeholder='Invalid book id' value="" required>
+      </div>
+
+      <div class="col">
+    Student Name:
+    <input type="text" name="s_name" id="s_name" class="form-control-plaintext readonly" placeholder='Invalid student id' value="" required>
     </div>
 
-
-    <div class="form-floating mb-3">
-      <input type="text" name="department" id="department" class="form-control-plaintext readonly" placeholder='Department' value="" required>
+   </div>
+   
+   <div class="row">
+    <div class="col">
+    Book Name:
+      <input type="text" name="name" id="name" class="form-control-plaintext readonly" placeholder='Invalid book id' value="" required>
     </div>
+
+    <div class="col">
+    Department:
+      <input type="text" name="department" id="department" class="form-control-plaintext readonly" placeholder='Invalid student id' value="" required>
+    </div>
+   </div>
+
+<div class="row">
+   <div class="col">
+    Category:
+      <input type="text" name="category" id="category" class="form-control-plaintext readonly" placeholder='Invalid book id' value="" required>
+    </div>
+</div>
+    
 
     <input class="btn btn-md btn-primary btn-block text-uppercase" name="submit" type="submit"><br><br>
 
