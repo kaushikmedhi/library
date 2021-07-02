@@ -38,18 +38,17 @@ include 'main.php';
     </div>
 
     <div class="form-floating mb-3">
-      <input type="text" name="isbn" id="isbn" class="form-control readonly" placeholder='Isbn' value="" required>
-      <label for="isbn">ISBN</label>
+      <input type="text" name="isbn" id="isbn" class="form-control-plaintext readonly" placeholder='ISBN' value="" required>
+      
     </div>
 
     <div class="form-floating mb-3">
-      <input type="text" name="name" id="name" class="form-control readonly" placeholder='name' value="" required>
-      <label for="name">Book name</label>
+      <input type="text" name="name" id="name" class="form-control-plaintext readonly" placeholder='Book Name' value="" required>
+      
     </div>
 
     <div class="form-floating mb-3">
-      <input type="text" name="category" id="category" class="form-control readonly" placeholder='category' value="" required>
-      <label for="category">Category</label>
+      <input type="text" name="category" id="category" class="form-control-plaintext readonly" placeholder='Category' value="" required>
     </div>
 
     <div style="width: 100%; height: 2px; background-color: gray; margin-top:30px; margin-bottom:30px;"></div>
@@ -61,14 +60,12 @@ include 'main.php';
 
 
     <div class="form-floating mb-3">
-      <input type="text" name="s_name" id="s_name" class="form-control readonly" placeholder='s_name' value="" required>
-      <label for="s_name">Student Name</label>
+      <input type="text" name="s_name" id="s_name" class="form-control-plaintext readonly" placeholder='Student Name' value="" required>
     </div>
 
 
     <div class="form-floating mb-3">
-      <input type="text" name="department" id="department" class="form-control readonly" placeholder='department' value="" required>
-      <label for="department">Department</label>
+      <input type="text" name="department" id="department" class="form-control-plaintext readonly" placeholder='Department' value="" required>
     </div>
 
     <input class="btn btn-md btn-primary btn-block text-uppercase" name="submit" type="submit"><br><br>
