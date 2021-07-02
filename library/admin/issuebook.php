@@ -41,12 +41,12 @@ include 'main.php';
    <div class="row">
 
     <div class="col">
-      <input type="text" name="b_id" class="form-control" onkeyup="GetDetail(this.value)" placeholder="Enter the book id">
+      <input type="text" name="b_id" class="form-control" onkeyup="GetDetail(this.value)" placeholder="Enter the Book ID">
       
     </div>
 
     <div class="col">
-      <input type="text" name="s_id" class="form-control" onkeyup="GetStudent(this.value)" placeholder="Student Id">
+      <input type="text" name="s_id" class="form-control" onkeyup="GetStudent(this.value)" placeholder="Enter the Student ID">
       
     </div>
 
