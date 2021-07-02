@@ -1,26 +1,31 @@
 <?php
   
-// Get the user id 
+// Get the b_id 
 $b_id = $_REQUEST['b_id'];
   
-// Database connection
-$con = mysqli_connect("localhost", "root1", "pass", "library");
+include '../connect.php';
   
 if ($b_id !== "") {
       
     // Get corresponding first name and 
-    // last name for that user id    
+    // isbn for that b_id    
     $query = mysqli_query($con, "SELECT isbn FROM book_status WHERE b_id='$b_id'");
-  
+    
+
     $row = mysqli_fetch_array($query);
-  
-    // Get the first name
+    
+    // Get the isbn
     $isbn = $row["isbn"];
-  
+    
+
+    $query2 = mysqli_query($con, "SELECT * FROM books WHERE isbn='$isbn'");
+    $row2 = mysqli_fetch_array($query2);
+    $name = $row2["b_name"];
+    $category = $row2["category"];
 }
   
 // Store it in a array
-$result = array("$isbn");
+$result = array("$isbn","$name","$category");
   
 // Send in JSON encoded form
 $myJSON = json_encode($result);
