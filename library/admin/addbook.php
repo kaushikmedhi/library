@@ -27,7 +27,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3 ">
 
-                <input type="text" class="form-control" name="isbn" id="isbn" placeholder="ISBN">
+                <input type="text" class="form-control" name="isbn" id="isbn" onkeyup="GetDetail(this.value)" placeholder="ISBN">
                 <label for="isbn"> ISBN </label>
             </div>
         </div>
@@ -35,7 +35,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="b_name" id="book_name" placeholder="Bookname">
+                <input type="text" class="form-control" name="b_name" id="b_name" placeholder="Bookname">
                 <label for="book_name"> Book Name </label>
             </div>
         </div>
@@ -45,7 +45,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="b_description" id="description" placeholder="Description">
+                <input type="text" class="form-control" name="description" id="description" placeholder="Description">
                 <label for="description"> Description </label>
             </div>
         </div>
@@ -108,15 +108,53 @@ include 'main.php';
             <input type="hidden" name="" class="form-control">
         </div>
     </div>
-    <div class="row g-2">
-        <div class="col-md">
+    
+        <div class="col-md" style="margin-top: 20px;">
             <input type="submit" class="btn btn-md btn-success form-control" value="Add Book" name="submit">
         </div>
-        <div class="col-md">
-        </div>
+    </div>    
 
 </form>
 
+<script>
+function GetDetail(str) {
+      if (str.length == 0) {
+        document.getElementById("b_name").value = "";
+        document.getElementById("description").value = "";
+        document.getElementById("quantity").value = "";
+        document.getElementById("author").value = "";
+        document.getElementById("year").value = "";
+        document.getElementById("category").value = "";
+        document.getElementById("language").value = "";
+        document.getElementById("file").value = "";
+        return;
+      } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+
+          if (this.readyState == 4 &&
+            this.status == 200) {
+
+            var myObj = JSON.parse(this.responseText);
+
+
+            document.getElementById("b_name").value = myObj[0];
+            document.getElementById("description").value = myObj[1];
+            document.getElementById("quantity").value = myObj[2];
+            document.getElementById("author").value = myObj[3];
+            document.getElementById("year").value = myObj[4];
+            document.getElementById("category").value = myObj[5];
+            document.getElementById("language").value = myObj[6];
+            document.getElementById("file").value = myObj[7];
+            }
+        };
+
+        xmlhttp.open("GET", "getbookdetails1.php?isbn=" + str, true);
+
+        xmlhttp.send();
+      }
+    }
+</script>
 
 </body>
 

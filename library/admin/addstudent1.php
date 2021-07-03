@@ -14,7 +14,7 @@ $department = $_POST["department"];
 
 if (isset($_POST['submit'])) {
 
-				$query = "INSERT INTO `student` (`s_id`, `s_name`, `s_pasword`, `s_email`, `s_phone`, `s_address`, `department`, `reg_date`, `update_date`) VALUES (NULL, '$s_name', '$s_password', '$s_email', '$s_phone', '$s_address', '$department', CURRENT_TIMESTAMP, NULL)";
+				$query = "INSERT INTO `student` (`s_id`, `s_name`, `s_password`, `s_email`, `s_phone`, `s_address`, `department`) VALUES (NULL, '$s_name', '$s_password', '$s_email', '$s_phone', '$s_address', '$department')";
 
 				if (mysqli_query($con, $query)) {
 					header("location:addstudent.php");
