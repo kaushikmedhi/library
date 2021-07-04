@@ -34,11 +34,12 @@ if (isset($_POST['submit'])) {
 				$filedestination = 'uploads/' . $filenamenew;
 				move_uploaded_file($filetemp, $filedestination);
 
-				$query = "INSERT INTO books VALUES ('$b_name', '$b_description', '$quantity', '$author', '$year', '$category', '$isbn', '$filedestination', '$language') ON DUPLICATE KEY UPDATE quantity = $quantity+1; ";
+				$query = "INSERT INTO books VALUES ('$b_name', '$b_description', '$quantity', '$author', '$year', '$category', '$isbn', '$filedestination', '$language') ON DUPLICATE KEY UPDATE quantity = quantity + $quantity; ";
 
 
 				if (mysqli_query($con, $query)) {
 
+					for ($i = 0; $i < $quantity; $i++) {
 						$randomid = (rand(100000, 999999));
 
 						$query2 = "INSERT INTO book_status VALUES ('$randomid', '$isbn', 0)";
@@ -48,7 +49,7 @@ if (isset($_POST['submit'])) {
 							echo '<script>alert("Records inserted successfully")</script>';
 							header("location:viewbook.php");
 						}
-					
+					}
 				} else {
 					echo mysqli_error($con);
 				}
