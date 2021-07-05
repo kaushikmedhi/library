@@ -13,11 +13,17 @@ include 'main.php';
 
 $sql = ("SELECT COUNT(s_id) FROM student");
 $rs = mysqli_query($con, $sql);
-$sql2 = ("SELECT COUNT(isbn) FROM books");
-$rs2 = mysqli_query($con, $sql2);
+$total_students = mysqli_fetch_array($rs);
 
-$result = mysqli_fetch_array($rs);
-$result2 = mysqli_fetch_array($rs2);
+$sql2 = ("SELECT COUNT(b_id) FROM book_status");
+$rs2 = mysqli_query($con, $sql2);
+$total_books = mysqli_fetch_array($rs2);
+
+$sql3 = ("SELECT COUNT(b_id) FROM book_status where status = 0");
+$rs3 = mysqli_query($con, $sql3);
+$available = mysqli_fetch_array($rs3);
+
+
 ?>
 
 
@@ -25,7 +31,7 @@ $result2 = mysqli_fetch_array($rs2);
 <div class="row">
     <div class="col-xl-3 col-md-6">
         <div class="card bg-primary text-white mb-4">
-            <div class="card-body">Total Students: <?php echo $result[0]; ?> </div>
+            <div class="card-body">Total Students: <?php echo $total_students[0]; ?> </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class="small text-white stretched-link" href="viewstudent.php">View Details</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -34,7 +40,7 @@ $result2 = mysqli_fetch_array($rs2);
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card bg-warning text-white mb-4">
-            <div class="card-body">Total books: <?php echo $result2[0]; ?></div>
+            <div class="card-body">Total books: <?php echo $total_books[0]; ?></div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class="small text-white stretched-link" href="viewbook.php">View Details</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -43,7 +49,7 @@ $result2 = mysqli_fetch_array($rs2);
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card bg-success text-white mb-4">
-            <div class="card-body">Available books: </div>
+            <div class="card-body">Available books: <?php echo $available[0]; ?> </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class="small text-white stretched-link" href="#">View Details</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -52,7 +58,7 @@ $result2 = mysqli_fetch_array($rs2);
     </div>
     <div class="col-xl-3 col-md-6">
         <div class="card bg-danger text-white mb-4">
-            <div class="card-body">Issued books: </div>
+            <div class="card-body">Issued books: <?php echo $total_books[0] - $available[0]; ?></div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a class="small text-white stretched-link" href="#">View Details</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
