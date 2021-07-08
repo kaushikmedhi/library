@@ -6,7 +6,7 @@ include '../connect.php';
   
 if ($t_id !== "") {
     
-    $sql = "update book_issue set status='RET' where transaction_id=$t_id";
+    $sql = "update book_issue set issue_status='RET' where transaction_id=$t_id";
     $response="false";
     if($con->query($sql) === TRUE)
     {

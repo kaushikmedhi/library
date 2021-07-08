@@ -20,7 +20,7 @@ if ($s_id !== "") {
       $department = $row["department"];
 
       $issued_book = 0;
-      $result =  mysqli_query($con, "SELECT * FROM book_issue WHERE s_id=$s_id and status='ACQ'");
+      $result =  mysqli_query($con, "SELECT * FROM book_issue WHERE s_id=$s_id and issue_status='ACQ'");
 
       if (mysqli_num_rows($result) > 0) {
          $issued_book = mysqli_num_rows($result);
