@@ -19,7 +19,7 @@ $rs2 = mysqli_query($con, $sql2);
 $result = mysqli_fetch_array($rs);
 $result2 = mysqli_fetch_array($rs2);
 
-$sql3 = ("SELECT COUNT(transaction_id) FROM book_issue where status='ACQ'");
+$sql3 = ("SELECT COUNT(transaction_id) FROM book_issue where issue_status='ACQ'");
 $result3 = mysqli_query($con, $sql3);
 $total_issue_book = mysqli_fetch_array($result3);
 
@@ -27,7 +27,7 @@ $sql4 = ("SELECT count(b_id) FROM book_status where status = 0");
 $result4 = mysqli_query($con, $sql4);
 $available_book = mysqli_fetch_array($result4);
 
-$sql5 = ("SELECT distinct count(b_id) FROM book_issue where status='RET'");
+$sql5 = ("SELECT distinct count(b_id) FROM book_issue where issue_status='RET'");
 $result5 = mysqli_query($con, $sql5);
 $total_returned_book = mysqli_fetch_array($result5);
 
@@ -115,7 +115,7 @@ echo mysqli_error($con);
             $query = 'SELECT * FROM (((book_issue INNER JOIN student ON book_issue.s_id = student.s_id) INNER JOIN book_status ON book_issue.b_id = book_status.b_id )INNER JOIN books ON book_status.isbn=books.isbn) order by book_issue.return_date ASC';
             $result = mysqli_query($con, $query);
             while ($row = mysqli_fetch_array($result)) {
-                $status = $row["status"];
+                $status = $row["issue_status"];
                 $return_time = strtotime($row["return_date"]);
                 $current_time = strtotime(date("Y-m-d"));
                 $offset = 24 * 60 * 60;
@@ -125,7 +125,7 @@ echo mysqli_error($con);
                 $r_status = "";
                 $action = "";
 
-                if ($status === "RET" || $status == 0) {
+                if ($status === "RET") {
                     $r_str = '<p style="text-align:center; color:white; background-color:green;">CLEAR</p>';
                     $r_status = '<p style="text-align:center; color:white; background-color:green;">RETURNED</p>';
                     $action = '<button class="btn btn-dark" disabled="disabled">RETURN</button>';

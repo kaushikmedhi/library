@@ -25,7 +25,7 @@ if(isset($data))
      
    }
 
-   $sql = "update book_issue set status='RET' where $s";
+   $sql = "update book_issue set issue_status='RET' where $s";
    $response = "false";
    if($con->query($sql) === TRUE)
    {
@@ -35,5 +35,4 @@ if(isset($data))
 }
 
 echo $response;
-
 ?>
