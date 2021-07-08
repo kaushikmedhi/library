@@ -74,7 +74,7 @@ if (isset($_GET['s_id'])) {
 		$isbn = $_GET['isbn'];
 		$b_name = $_GET['b_name'];
 		$t_id = $_GET['t_id'];
-		$query = "select return_date from book_issue where s_id=$s_id and b_id=$isbn";
+		$query = "select return_date from book_issue where s_id=$s_id and b_id=$b_id";
 		$result = mysqli_query($con, $query);
 		if ($row = mysqli_fetch_array($result)) {
 			$return_time = strtotime($row["return_date"]);

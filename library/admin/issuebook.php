@@ -85,7 +85,7 @@ include 'main.php';
       </div>
       <div class="col">
         Total books issued by the student:
-        <input type="text" name="issued_books" id="issued_books" class="form-control-plaintext readonly" placeholder='Invalid ' value="" required>
+        <input type="text" name="issued_books" id="issued_books" class="form-control-plaintext readonly" placeholder='Maximum 5 books ' value="" required>
       </div>
     </div>
 
