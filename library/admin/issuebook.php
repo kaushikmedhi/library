@@ -196,9 +196,9 @@ include 'main.php';
             document.getElementById("department").value = myObj[1];
             document.getElementById("issued_books").value = myObj[2];
 
-            if (myObj[2] === 5 || myObj[2] == -1 || myObj[2] === null) {
+            if (myObj[2] >= 5 || myObj[2] == -1 || myObj[2] === null) {
               disableStudent = true;
-              if (myObj[2] === 5) {
+              if (myObj[2] >= 5) {
                 document.getElementById("issued_books").classList.add("text-white", "bg-danger", "fw-bolder");
                 document.getElementById("issued_books").classList.remove("bg-success");
               }
