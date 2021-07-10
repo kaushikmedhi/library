@@ -3,15 +3,16 @@
 
 include '../connect.php';
 // $con=mysqli_connect("localhost","root1","pass","library")or die("can't connect...");
-
-$name = $_POST["name"];
-$password = $_POST["password"];
-$result=mysqli_query($con,"select * from admin where name = '$name'");
+session_start();
+$s_email = $_POST["s_email"];
+$s_password = $_POST["s_password"];
+$result=mysqli_query($con,"select * from student where s_email = '$s_email'");
 	$row=mysqli_fetch_array($result);
-	if($row['password']==$password)
+	$s_name = $row["s_name"];
+	if($row['s_password']==$s_password)
 	{
-		$_SESSION['name']=$name;
- 		header("Location:adminpanel.php?name=$name");
+		$_SESSION['s_name']=$s_name;
+ 		header("Location:studentpanel.php");
  	}
  	else
  	{
@@ -21,3 +22,4 @@ $result=mysqli_query($con,"select * from admin where name = '$name'");
 
 
 ?>
+
