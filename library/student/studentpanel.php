@@ -108,7 +108,6 @@ $ss_id = $row1["s_id"];
                         <div class="1">
                             <h3>ID: </h3>
                             <h3>Name: </h3>
-                            <h3>Password: </h3>
                             <h3>Department:</h3>
                             <h3>E-mail: </h3>
                             <h3>Phone:</h3>
@@ -117,7 +116,6 @@ $ss_id = $row1["s_id"];
                         <div class="2">
                          <h3> <?php echo $row1["s_id"]; ?></h3>
                          <h3> <?php echo $row1["s_name"]; ?></h3>
-                         <h3> ******** </h3>
                          <h3> <?php echo $row1["department"]; ?></h3>
                          <h3> <?php echo $row1["s_email"]; ?></h3>
                          <h3> <?php echo $row1["s_phone"]; ?></h3>
@@ -149,11 +147,11 @@ $ss_id = $row1["s_id"];
                 <table class="table" id="myTable">
         <thead class="thead">
             <tr>
-                <td>Book Id</td>
-                <td>ISBN</td>
-                <td>Book Name</td>
-                <td>Status</td>
-                <td>Day remaining</td>
+                <th>ISBN</th>
+                <th>Book Id</th>
+                <th>Book Name</th>
+                <th>Status</th>
+                <th>Day remaining</th>
             </tr>
         </thead>
 
@@ -169,9 +167,6 @@ $ss_id = $row1["s_id"];
                 $offset = 24 * 60 * 60;
                 $remaining = $return_time - $current_time;
                 $remaining_day = floor($remaining / $offset);
-                $r_str = "";
-                $r_status = "";
-                $action = "";
             
             $bb_id=$row["b_id"];
             $iisbn=mysqli_query($con, "SELECT * FROM book_status WHERE b_id=$bb_id");
@@ -183,12 +178,9 @@ $ss_id = $row1["s_id"];
                 if ($status === "RET") {
                     $r_str = '<p style="text-align:center; color:white; background-color:green;">CLEAR</p>';
                     $r_status = '<p style="text-align:center; color:white; background-color:green;">RETURNED</p>';
-                    $action = '<button class="btn btn-dark" disabled="disabled">RETURN</button>';
                 } else {
                     $r_str = $remaining_day > 0 ? '<p style="text-align:center; color:black; background-color:yellow;">' . $remaining_day . " day remains</p>" : '<p style="text-align:center; color:black; background-color:red;">' . abs($remaining_day) . " day penalty</p>";
-                    $r_status = '<p style="text-align:center; color:black; background-color:RED;">ACQUIRED</p>';
-                    $action = '<button class="btn btn-dark"><a style="text-decoration:none;" href="returnBook.php?s_id=' . $row["s_id"] . '&& isbn=' . $row["isbn"] . '&& s_name=' . $row["s_name"] . '&& b_id=' . $row["b_id"] . '&& b_name=' . $row["b_name"] . '&& t_id=' . $row["transaction_id"] . '" class="action">RETURN</a></button>';
-                }
+                    $r_status = '<p style="text-align:center; color:black; background-color:RED;">ACQUIRED</p>';                }
 
                 echo '
                 <tr>

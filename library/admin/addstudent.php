@@ -30,7 +30,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="s_name" id="name" placeholder="Name">
+                <input type="text" class="form-control" name="s_name" id="name" required placeholder="Name">
                 <label for="name"> Name </label>
             </div>
         </div>
@@ -38,7 +38,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="s_password" id="password" placeholder="Password">
+                <input type="text" class="form-control" name="s_password" id="password" required placeholder="Password">
                 <label for="password"> Password </label>
             </div>
         </div>
@@ -48,7 +48,7 @@ include 'main.php';
      <div class="row g-2">
         <div class="col-md">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" name="s_email" id="email" placeholder="E-mail">
+                <input type="email" class="form-control" name="s_email" id="email" required placeholder="E-mail">
                 <label for="email"> E-mail </label>
 
             </div>
@@ -58,7 +58,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="s_phone" id="phone" placeholder="Phone">
+                <input type="text" class="form-control" name="s_phone" id="phone" required placeholder="Phone">
                 <label for="phone"> Phone </label>
             </div>
         </div>
@@ -68,7 +68,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="s_address" id="address" placeholder="Address">
+                <input type="text" class="form-control" name="s_address" id="address" required placeholder="Address">
                 <label for="address"> Address </label>
             </div>
         </div>
@@ -78,7 +78,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="department" id="department" placeholder="Department">
+                <input type="text" class="form-control" name="department" id="department" required placeholder="Department">
                 <label for="department"> Department </label>
             </div>
         </div>
