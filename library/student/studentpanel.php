@@ -147,8 +147,8 @@ $ss_id = $row1["s_id"];
                 <table class="table" id="myTable">
         <thead class="thead">
             <tr>
-                <th>ISBN</th>
                 <th>Book Id</th>
+                <th>ISBN</th>
                 <th>Book Name</th>
                 <th>Status</th>
                 <th>Day remaining</th>
