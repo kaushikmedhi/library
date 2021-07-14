@@ -4,7 +4,7 @@
 include '../connect.php';
 
 $b_name = $_POST["b_name"];
-$b_description = $_POST["b_description"];
+$b_description = $_POST["description"];
 $quantity = $_POST["quantity"];
 $author = $_POST["author"];
 $year = $_POST["year"];
@@ -40,9 +40,8 @@ if (isset($_POST['submit'])) {
 				if (mysqli_query($con, $query)) {
 
 					for ($i = 0; $i < $quantity; $i++) {
-						$randomid = (rand(100000, 999999));
 
-						$query2 = "INSERT INTO book_status VALUES ('$randomid', '$isbn', 0)";
+						$query2 = "INSERT INTO book_status VALUES (NULL,'$isbn', 0)";
 						$result = mysqli_query($con, $query2);
 
 						if ($result) {
