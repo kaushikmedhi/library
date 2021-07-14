@@ -7,13 +7,10 @@ include '../connect.php';
 
 if ($s_id !== "") {
 
-   if (strlen((string)$s_id) <> 4) {
-      $result = array(NULL, NULL, NULL);
-   } else {
-
       $query = mysqli_query($con, "SELECT * FROM student WHERE s_id='$s_id'");
 
-
+      if (mysqli_num_rows($query) > 0) {
+      
       $row = mysqli_fetch_array($query);
 
       $s_name = $row["s_name"];
@@ -28,6 +25,8 @@ if ($s_id !== "") {
 
       // Store it in a array
       $result = array("$s_name", "$department", "$issued_book");
+   }else {
+      $result = array(NULL, NULL, NULL);
    }
 }
 

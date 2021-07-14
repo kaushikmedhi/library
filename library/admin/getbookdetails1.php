@@ -10,8 +10,9 @@ include '../connect.php';
 if ($isbn !== "") {
       
     // Get corresponding first name and 
-    // isbn for that isbn    
+    // isbn for that isbn   
     $query = mysqli_query($con, "SELECT * FROM books WHERE isbn='$isbn'");
+
     $row = mysqli_fetch_array($query);
    
     $b_name = $row["b_name"];

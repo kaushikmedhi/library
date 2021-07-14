@@ -9,12 +9,10 @@ if ($b_id !== "") {
 
     // Get corresponding first name and 
     // isbn for that b_id    
-    if (strlen((string)$b_id) <> 6) {
-        $result = array(NULL, NULL, NULL);
-    } else {
-        $query = mysqli_query($con, "SELECT * FROM book_status WHERE b_id='$b_id'");
+    $query = mysqli_query($con, "SELECT * FROM book_status WHERE b_id='$b_id'");
 
-
+    if (mysqli_num_rows($query) > 0) {
+     
         $row = mysqli_fetch_array($query);
 
         // Get the isbn
@@ -26,6 +24,9 @@ if ($b_id !== "") {
         $row2 = mysqli_fetch_array($query2);
         $name = $row2["b_name"];
         $result = array("$isbn", "$name", "$status");
+    }
+    else {
+        $result = array(NULL, NULL, NULL);
     }
 }
 
