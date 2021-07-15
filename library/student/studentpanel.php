@@ -37,6 +37,34 @@ $ss_id = $row1["s_id"];
 
 </head>
 
+<style>
+    html {
+        overflow: auto;
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #ebebeb;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: #6d6d6d;
+    }
+</style>
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
     <div class="site-wrap">
