@@ -18,6 +18,25 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 a{
     text-decoration: none;
 }
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color:  white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    background: rgb(255, 37, 24);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255, 37, 24);
+    background: -moz-linear-gradient(180deg, rgba(255, 37, 24, 1) 0%, rgba(222, 133, 9, 1) 67%, rgba(222, 190, 162, 1) 86%);
+    background: -webkit-linear-gradient(180deg, rgba(255, 37, 24, 1) 0%, rgba(222, 133, 9, 1) 67%, rgba(222, 190, 162, 1) 86%);
+    background: linear-gradient(180deg, rgba(255, 37, 24, 1) 0%, rgba(222, 133, 9, 1) 67%, rgba(222, 190, 162, 1) 86%);
+
+  }
 </style>
 <body>
 
