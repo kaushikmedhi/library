@@ -78,7 +78,7 @@ include 'main.php';
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <select class="form-select" id="branch_select" required>
+                <select class="form-select" id="branch_select" name="department" required>
                     <option selected disabled value="">Select Branch</option>
                     <option value="MCA">Master of Computer Application</option>
                     <option value="CIV">Civil Engineering</option>

@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $department = $_POST["department"];
 	
 
-				$query = "UPDATE `student` SET  s_name='$s_name', s_email='$s_email', s_phone='$s_phone', s_address='$s_address', department='$department', update_date=CURRENT_TIMESTAMP where s_id='$s_id'  ";
+				$query = "UPDATE `student` SET  s_name='$s_name', s_email='$s_email', s_phone='$s_phone', s_address='$s_address', department='$department' where s_id='$s_id'  ";
                 
 				if (mysqli_query($con, $query)) {
 					header("location:viewstudent.php");

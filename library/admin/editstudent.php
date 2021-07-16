@@ -86,8 +86,15 @@ $row = mysqli_fetch_array($result);
 <div class="col-md">
     <div class="form-floating mb-3">
 
-        <input type="text" class="form-control" name="department" id="department" placeholder="Department" value="<?php echo $row["department"] ?>">
-        <label for="department"> Department </label>
+    <select class="form-select" id="branch_select" name="department" required>
+                    <option value="MCA" <?php if($row["department"] == "MCA") echo ' selected="selected"'; ?>>Master of Computer Application</option>
+                    <option value="CIV" <?php if($row["department"] == "CIV") echo ' selected="selected"'; ?>>Civil Engineering</option>
+                    <option value="CSE" <?php if($row["department"] == "CSE") echo ' selected="selected"'; ?>>Computer Science Engineering</option>
+                    <option value="MEC" <?php if($row["department"] == "MEC") echo ' selected="selected"'; ?>>Mechanical Engineering</option>
+                    <option value="EEE" <?php if($row["department"] == "EEE") echo ' selected="selected"'; ?>>Electrical & Electronics Engineering</option>
+                </select>
+        
+    <label for="department"> Department </label>
     </div>
 </div>
 </div>
