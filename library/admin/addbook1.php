@@ -1,7 +1,23 @@
+<html>
+<head>
+<style>
+p.inline {display: inline-block;}
+span { font-size: 13px;}
+</style>
+<style type="text/css" media="print">
+    @page 
+    {
+        size: auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
 
+    }
+</style>
+</head>
+<body onload="window.print();">
 <?php
 
 include '../connect.php';
+include 'barcode128.php';
 
 $b_name = $_POST["b_name"];
 $b_description = $_POST["description"];
@@ -12,7 +28,6 @@ $category = $_POST["category"];
 $isbn = $_POST["isbn"];
 $language = $_POST["language"];
 $file = $_FILES["file"];
-print_r($file);
 
 if (isset($_POST['submit'])) {
 
@@ -21,6 +36,8 @@ if (isset($_POST['submit'])) {
 	$filetemp = $file['tmp_name'];
 	$filetype = $file['type'];
 	$filesize = $file['size'];
+	$success_msg = false;
+	$resultset = array();
 
 	$fileExt = explode('.', $filename);
 	$fileActualEXt = strtolower(end($fileExt));
@@ -43,11 +60,33 @@ if (isset($_POST['submit'])) {
 
 						$query2 = "INSERT INTO book_status VALUES (NULL,'$isbn', 0)";
 						$result = mysqli_query($con, $query2);
+						$success_msg = true;
+					}
+						if ($success_msg) {
+							?>
+							<SCRIPT> 
+        						alert('Successfuly Generated Book IDs');
+    						</SCRIPT>
+							<div style="margin-left: 5%">
+								<?php
+								$bid_query= "SELECT b_id FROM book_status WHERE isbn = $isbn ORDER BY b_id LIMIT $quantity;";
+								$res = mysqli_query($con, $bid_query);
+								
+								
 
-						if ($result) {
-							echo '<script>alert("Records inserted successfully")</script>';
-							header("location:viewbook.php");
-						}
+								while($get_bid = mysqli_fetch_array($res)){
+									echo "<p class='inline'><span ><b>isbn: $isbn</b></span>".bar128(stripcslashes($get_bid['b_id']))."</p>&nbsp&nbsp&nbsp&nbsp";
+								}
+
+								?>
+							</div>
+							<?php
+
+					}else{
+						echo "<SCRIPT> 
+        				alert('Unable to process. Try again.')
+       					 window.location.replace('addbook.php');
+    					</SCRIPT>";
 					}
 				} else {
 					echo mysqli_error($con);
@@ -63,4 +102,6 @@ if (isset($_POST['submit'])) {
 	}
 }
 ?>
+</body>
+</html>
 
