@@ -117,7 +117,7 @@ $ss_id = $row1["s_id"];
                 <div class="row align-items-center justify-content-center">
                     <div class="col text-center">
                         <h1>LIBRARY MANAGEMENT SYSTEM</h1>
-                        <h3 style="color: white;" class="mb-5">Welcome <?php echo $s_name ?>.</h3>
+                        <h3 style="color: white; padding:100px;" class="mb-5">Welcome <?php echo $s_name ?>.</h3>
 
                     </div>
                 </div>
