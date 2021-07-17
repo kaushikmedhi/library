@@ -8,21 +8,71 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
-.w3-button{
-    margin: 20px;
-}
-a{
-    text-decoration: none;
-}
+  body {
+    margin: 0;
+    overflow: scroll;
+  }
 
-::-webkit-scrollbar-track {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Lato", sans-serif
+  }
+
+  .w3-bar,
+  h1,
+  button {
+    font-family: "Montserrat", sans-serif
+  }
+
+
+
+  .w3-button {
+    margin: 20px;
+    border-radius: 50px;
+  }
+
+  .header {
+    margin-bottom: 0;
+    padding: 250px 200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .card {
+    width: 100%;
+    height: 330px;
+    box-shadow: 1px 1px 15px 5px lightgray;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+  .card span{
+    padding: 20px;
+    text-align: center;
+    font-size: 80px;
+    color: #328da8;
+  }
+
+  .row {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color:  white;
+    background-color: white;
   }
 
   ::-webkit-scrollbar {
@@ -38,80 +88,131 @@ a{
 
   }
 </style>
+
 <body>
 
 
 
-<!-- Header -->
-<header class="w3-container w3-center" 
-style="padding:200px 16px; 
-background-image:	linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(admin/images/background.jpg);background-repeat:no-repeat;
-	background-size: cover;
-  background-position: center; color:white;" >
+  <!-- Header -->
+  <div class="header" style="background-image:	linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(admin/images/background.jpg);background-repeat:no-repeat;
+	background-size:cover;
+  background-position: center; color:white;">
+    <div class="w3-center">
+      <h1 class="w3-margin w3-jumbo">LIBRARY MANAGEMENT SYSTEM</h1>
 
-  <h1 class="w3-margin w3-jumbo">LIBRARY MANAGEMENT SYSTEM</h1>
- 
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">
-  <a href="admin/login.php">ADMIN LOGIN</a>
-</button>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">
-  <a href="student/login.php">STUDENT LOGIN</a>
-</button>
-</header>
-
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-
-    <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+      <button class="w3-button w3-indigo w3-padding-large w3-large w3-margin-top" onclick="location.href='admin/login.php'">ADMIN LOGIN</button>
+      <button class="w3-button w3-indigo w3-padding-large w3-large w3-margin-top" onclick="location.href='student/login.php'">STUDENT LOGIN</button>
     </div>
   </div>
-</div>
 
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+  <!-- First Grid -->
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="card">
+        <span class="material-icons">
+library_books
+</span>
+          <div class="card-body">
+            <h5 class="card-title">Acquisition & Cataloguing</h5>
+            <p class="card-text">The acquisition & cataloguing feature of the library management system enables the librarian to select & buy books, journals, and other resources and create a database of the same for easy book search.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+        <span class="material-icons">
+receipt
+</span>
+          <div class="card-body">
+            <h5 class="card-title">Serial Control</h5>
+            <p class="card-text">The serial control feature of the library software enables the librarians to handle or control processes such as subscription, renewals of books or their cancellations.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+        <span class="material-icons">
+qr_code_2
+</span>
+          <div class="card-body">
+            <h5 class="card-title">Bar code</h5>
+            <p class="card-text">When a book is added by the librarian, an unique bar code is automatically generated which can be scaned to get the book details when issuing or returning the book by a student.</p>
+
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32"></h5>
+    <div class="row">
+      <div class="col-4">
+        <div class="card">
+        <span class="material-icons">
+update
+</span>
+          <div class="card-body">
+            <h5 class="card-title">Updating records</h5>
+            <p class="card-text">Book details or student details can be easily updated in the librarian dashboard. updating book quantity or changing the description, everything can be done in one click.</p>
 
-      <p class="w3-text-grey"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+        <span class="material-icons">
+manage_search
+</span>
+          <div class="card-body">
+            <h5 class="card-title">Circulation</h5>
+            <p class="card-text">The circulation feature enables the librarian to create and manage borrower types along with keeping a tab on their book issue date, return date, dues, and fines. It enables a smooth circulation of books in the library.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+        <span class="material-icons">
+person
+</span>
+          <div class="card-body">
+            <h5 class="card-title">Student Dashboard</h5>
+            <p class="card-text">Students get their own dashboard which can be accessed only by them. They can view or update their profile and browse through their records of borrowed books.</p>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
-</div>
+  <!-- Second Grid -->
+  <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+   <center>
+     <h3><u>Creators</u></h3>
+     <p>Anirban Dev Sharma</p>
+     <p>Ankur Jyoti Das</p>
+     <p>Jugantar Kashyap</p>
+     <p>Kaushik Medhi</p>
+     <p>Meghna Dutta</p>
+   </center>
+  </div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <div class="w3-xlarge w3-padding-32">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </footer>
 
 
 
 </body>
-</html>
 
+</html>
