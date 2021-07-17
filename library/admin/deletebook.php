@@ -5,9 +5,9 @@ include '../connect.php';
 
 
 
-    $isbn=$_GET["isbn"];
+    $b_id=$_GET["b_id"];
 
-    $result = mysqli_query($con, "delete from books where isbn='$isbn'");
+    $result = mysqli_query($con, "delete from book_status where b_id='$b_id'");
 
     
     if($result){

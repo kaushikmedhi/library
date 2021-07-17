@@ -8,6 +8,8 @@ $name = $_SESSION['name'];
 
 include '../connect.php';
 include 'main.php';
+
+$isbn=$_GET["isbn"];
 ?>
 
 
@@ -22,15 +24,9 @@ include 'main.php';
     <table class="table" id="myTable">
         <thead class="thead">
             <tr>
-                <td>Photo</td>
                 <td>ISBN</td>
-                <td>Name</td>
-                <td>Description</td>
-                <td>quantity</td>
-                <td>Author</td>
-                <td>Year of publication</td>
-                <td>Category</td>
-                <td>Language</td>
+                <td>Book ID</td>
+                <td>Status</td>
                 <td>Action</td>
             </tr>
         </thead>
@@ -38,21 +34,24 @@ include 'main.php';
         <tbody>
             <?php
 
-            $result = mysqli_query($con, "select * from books");
+            $result = mysqli_query($con, "select * from book_status where isbn=$isbn");
             while ($row = mysqli_fetch_array($result)) {
+                $status=$row["status"];
+                if ($status === "1") {
+                    
+                    $r_status = '<p style="text-align:center; color:white; background-color:green;">Available</p>';
+                    
+                } else {
+                   
+                    $r_status = '<p style="text-align:center; color:black; background-color:RED;">Acquired</p>';
+                   
+                }
                 echo '
                 <tr>
-                    <td><img src="' . $row['photo'] . '" width="80" height="120"></td>
                     <td>' . $row["isbn"] . '</td>
-                    <td>' . $row["b_name"] . '</td>
-                    <td>' . $row["b_description"] . '</td>
-                    <td>' . $row["quantity"] . '</td>
-                    <td>' . $row["author"] . '</td>
-                    <td>' . $row["year"] . '</td>
-                    <td>' . $row["category"] . '</td>
-                    <td>' . $row["language"] . '</td>
-                    <td><a class="btn btn-primary" href="editbook.php?isbn=' . $row["isbn"] . '">EDIT</a>
-                    <a class="btn btn-warning" href="viewbookdetails.php?isbn=' . $row["isbn"] . '" class="action">DETAILS</a></td>
+                    <td>' . $row["b_id"] . '</td>
+                    <td>' . $r_status . '</td>
+                    <td><a class="btn btn-danger" href="deletebook.php?b_id=' . $row["b_id"] . '" class="action">DELETE</a></td>
                     </tr>
             ';
             }
