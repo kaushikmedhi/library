@@ -157,7 +157,7 @@ $ss_id = $row1["s_id"];
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4 mt-4">
-                    <a href="edit-profile.php.html" class="btn btn-primary btn-block">Edit Profile</a>
+                    <a href="editprofile.php?s_id=<?php echo $row1["s_id"] ?>" class="btn btn-primary btn-block">Edit Profile</a>
                 </div>
             </div>
         </div>
