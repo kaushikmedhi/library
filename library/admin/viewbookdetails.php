@@ -37,7 +37,7 @@ $isbn=$_GET["isbn"];
             $result = mysqli_query($con, "select * from book_status where isbn=$isbn");
             while ($row = mysqli_fetch_array($result)) {
                 $status=$row["status"];
-                if ($status === "1") {
+                if ($status === "0") {
                     
                     $r_status = '<p style="text-align:center; color:white; background-color:green;">Available</p>';
                     
