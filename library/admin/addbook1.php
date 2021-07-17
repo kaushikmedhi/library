@@ -17,7 +17,9 @@ span { font-size: 13px;}
 <?php
 
 include '../connect.php';
-include 'barcode128.php';
+require "vendor/autoload.php";
+
+$Bar = new Picqer\Barcode\BarcodeGeneratorHTML();
 
 $b_name = $_POST["b_name"];
 $b_description = $_POST["description"];
@@ -75,7 +77,8 @@ if (isset($_POST['submit'])) {
 								
 
 								while($get_bid = mysqli_fetch_array($res)){
-									echo "<p class='inline'><span ><b>isbn: $isbn</b></span>".bar128(stripcslashes($get_bid['b_id']))."</p>&nbsp&nbsp&nbsp&nbsp";
+									$code = $Bar->getBarcode($get_bid['b_id'], $Bar::TYPE_CODE_128);
+									echo "<p class='inline'><span ><b>isbn: $isbn</b></span>".$code."<span ><b>Book ID: ".$get_bid['b_id']." </b></span></p>&nbsp";
 								}
 
 								?>
