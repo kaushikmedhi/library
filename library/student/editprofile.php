@@ -138,7 +138,7 @@ $row = mysqli_fetch_array($result);
                             <div class="col-md">
                                 <div class="form-floating mb-3">
                                 <label for="name"> Name </label>
-                                    <input type="text" class="form-control" name="s_name" id="name" placeholder="Name" value="<?php echo $row["s_name"] ?>">
+                                    <input type="text" class="form-control" name="s_name" id="name" placeholder="Name" value="<?php echo $row["s_name"] ?>" readonly>
                                     
                                 </div>
                             </div>
@@ -180,7 +180,7 @@ $row = mysqli_fetch_array($result);
                             <div class="col-md">
                                 <div class="form-floating mb-3">
                                 <label for="address"> Address </label>
-                                    <input type="text" class="form-control" name="s_address" id="address" placeholder="Address" value="<?php echo $row["s_address"] ?>">
+                                    <input type="text" class="form-control" name="s_address" id="address" placeholder="Address" value="<?php echo $row["s_address"] ?>" readonly>
                                     
                                 </div>
                             </div>
@@ -191,7 +191,7 @@ $row = mysqli_fetch_array($result);
                                 
 
                                 <label for="department"> Department </label>
-                                    <select class="form-control" id="branch_select" name="department" required>
+                                    <select class="form-control" id="branch_select" name="department" required disabled = "true">
                                         <option value="MCA" <?php if ($row["department"] == "MCA") echo ' selected="selected"'; ?>>Master of Computer Application</option>
                                         <option value="CIV" <?php if ($row["department"] == "CIV") echo ' selected="selected"'; ?>>Civil Engineering</option>
                                         <option value="CSE" <?php if ($row["department"] == "CSE") echo ' selected="selected"'; ?>>Computer Science Engineering</option>

@@ -14,6 +14,8 @@
   body {
     margin: 0;
     overflow: scroll;
+    width: 100%;
+    margin: 0px;
   }
 
   h1,
@@ -60,7 +62,7 @@
     padding: 20px;
     text-align: center;
     font-size: 80px;
-    color: #328da8;
+    color: rgb(255, 87, 36);
   }
 
   .row {

@@ -11,6 +11,12 @@ span { font-size: 13px;}
         margin: 0mm;  /* this affects the margin in the printer settings */
 
     }
+
+	#barcode{
+		float: left;
+		margin-left: 12px;
+		padding-left: 3%;
+	}
 </style>
 </head>
 <body onload="window.print();">
@@ -78,7 +84,7 @@ if (isset($_POST['submit'])) {
 
 								while($get_bid = mysqli_fetch_array($res)){
 									$code = $Bar->getBarcode($get_bid['b_id'], $Bar::TYPE_CODE_128);
-									echo "<p class='inline'><span ><b>isbn: $isbn</b></span>".$code."<span ><b>Book ID: ".$get_bid['b_id']." </b></span></p>&nbsp";
+									echo "<div id = 'barcode'><p class='inline'><span ><b>isbn: $isbn</b></span>".$code."<span ><b>Book ID: ".$get_bid['b_id']." </b></span></p></div>&nbsp";
 								}
 
 								?>
