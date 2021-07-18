@@ -46,7 +46,7 @@
 
   .header {
     margin-bottom: 0;
-    padding: 250px 200px;
+    padding: 220px 200px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -94,6 +94,10 @@
     background: linear-gradient(180deg, rgba(255, 37, 24, 1) 0%, rgba(222, 133, 9, 1) 67%, rgba(222, 190, 162, 1) 86%);
 
   }
+
+  #book{
+    margin-top: -100px;
+  }
 </style>
 
 <body>
@@ -105,12 +109,13 @@
 	background-size:cover;
   background-position: center; color:white;">
     <div class="w3-center">
+      <span class="material-icons w3-jumbo" id="book">auto_stories</span><br>
       <h1 class="w3-margin w3-jumbo">LIBRARY MANAGEMENT SYSTEM</h1>
 
       <button class="w3-button w3-theme w3-hover-black w3-padding-large w3-large w3-margin-top" onclick="location.href='student/login.php'">
-      <i class="material-icons">school</i> STUDENT LOGIN</button>
+        <i class="material-icons">school</i> STUDENT LOGIN</button>
       <button class="w3-button w3-theme w3-hover-black w3-padding-large w3-large w3-margin-top" onclick="location.href='admin/login.php'">
-      <span class="material-icons">admin_panel_settings</span> ADMIN LOGIN</button>
+        <span class="material-icons">admin_panel_settings</span> ADMIN LOGIN</button>
     </div>
   </div>
 
