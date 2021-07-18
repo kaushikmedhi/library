@@ -5,15 +5,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-orange.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <style>
   body {
     margin: 0;
-    overflow: scroll;
+
     width: 100%;
     margin: 0px;
   }
@@ -37,7 +39,9 @@
 
   .w3-button {
     margin: 20px;
-    border-radius: 50px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: rgb(255, 87, 36);
   }
 
   .header {
@@ -58,7 +62,8 @@
   .card-body {
     text-align: center;
   }
-  .card span{
+
+  .card span {
     padding: 20px;
     text-align: center;
     font-size: 80px;
@@ -102,8 +107,10 @@
     <div class="w3-center">
       <h1 class="w3-margin w3-jumbo">LIBRARY MANAGEMENT SYSTEM</h1>
 
-      <button class="w3-button w3-indigo w3-padding-large w3-large w3-margin-top" onclick="location.href='admin/login.php'">ADMIN LOGIN</button>
-      <button class="w3-button w3-indigo w3-padding-large w3-large w3-margin-top" onclick="location.href='student/login.php'">STUDENT LOGIN</button>
+      <button class="w3-button w3-theme w3-hover-black w3-padding-large w3-large w3-margin-top" onclick="location.href='student/login.php'">
+      <i class="material-icons">school</i> STUDENT LOGIN</button>
+      <button class="w3-button w3-theme w3-hover-black w3-padding-large w3-large w3-margin-top" onclick="location.href='admin/login.php'">
+      <span class="material-icons">admin_panel_settings</span> ADMIN LOGIN</button>
     </div>
   </div>
 
@@ -112,9 +119,9 @@
     <div class="row">
       <div class="col-4">
         <div class="card">
-        <span class="material-icons">
-library_books
-</span>
+          <span class="material-icons">
+            library_books
+          </span>
           <div class="card-body">
             <h5 class="card-title">Acquisition & Cataloguing</h5>
             <p class="card-text">The acquisition & cataloguing feature of the library management system enables the librarian to select & buy books, journals, and other resources and create a database of the same for easy book search.</p>
@@ -124,9 +131,9 @@ library_books
       </div>
       <div class="col-4">
         <div class="card">
-        <span class="material-icons">
-receipt
-</span>
+          <span class="material-icons">
+            receipt
+          </span>
           <div class="card-body">
             <h5 class="card-title">Serial Control</h5>
             <p class="card-text">The serial control feature of the library software enables the librarians to handle or control processes such as subscription, renewals of books or their cancellations.</p>
@@ -136,9 +143,9 @@ receipt
       </div>
       <div class="col-4">
         <div class="card">
-        <span class="material-icons">
-qr_code_2
-</span>
+          <span class="material-icons">
+            qr_code_2
+          </span>
           <div class="card-body">
             <h5 class="card-title">Bar code</h5>
             <p class="card-text">When a book is added by the librarian, an unique bar code is automatically generated which can be scaned to get the book details when issuing or returning the book by a student.</p>
@@ -151,9 +158,9 @@ qr_code_2
     <div class="row">
       <div class="col-4">
         <div class="card">
-        <span class="material-icons">
-update
-</span>
+          <span class="material-icons">
+            update
+          </span>
           <div class="card-body">
             <h5 class="card-title">Updating records</h5>
             <p class="card-text">Book details or student details can be easily updated in the librarian dashboard. updating book quantity or changing the description, everything can be done in one click.</p>
@@ -163,9 +170,9 @@ update
       </div>
       <div class="col-4">
         <div class="card">
-        <span class="material-icons">
-manage_search
-</span>
+          <span class="material-icons">
+            manage_search
+          </span>
           <div class="card-body">
             <h5 class="card-title">Circulation</h5>
             <p class="card-text">The circulation feature enables the librarian to create and manage borrower types along with keeping a tab on their book issue date, return date, dues, and fines. It enables a smooth circulation of books in the library.</p>
@@ -175,9 +182,9 @@ manage_search
       </div>
       <div class="col-4">
         <div class="card">
-        <span class="material-icons">
-person
-</span>
+          <span class="material-icons">
+            school
+          </span>
           <div class="card-body">
             <h5 class="card-title">Student Dashboard</h5>
             <p class="card-text">Students get their own dashboard which can be accessed only by them. They can view or update their profile and browse through their records of borrowed books.</p>
@@ -190,14 +197,14 @@ person
 
   <!-- Second Grid -->
   <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-   <center>
-     <h3><u>Creators</u></h3>
-     <p>Anirban Dev Sharma</p>
-     <p>Ankur Jyoti Das</p>
-     <p>Jugantar Kashyap</p>
-     <p>Kaushik Medhi</p>
-     <p>Meghna Dutta</p>
-   </center>
+    <center>
+      <h3><u>Creators</u></h3>
+      <p>Anirban Dev Sharma</p>
+      <p>Ankur Jyoti Das</p>
+      <p>Jugantar Kashyap</p>
+      <p>Kaushik Medhi</p>
+      <p>Meghna Dutta</p>
+    </center>
   </div>
 
 
