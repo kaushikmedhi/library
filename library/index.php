@@ -46,7 +46,7 @@
 
   .header {
     margin-bottom: 0;
-    padding: 220px 200px;
+    padding: 203px 200px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
