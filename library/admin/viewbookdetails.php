@@ -9,44 +9,66 @@ $name = $_SESSION['name'];
 include '../connect.php';
 include 'main.php';
 
-$isbn=$_GET["isbn"];
+$isbn = $_GET["isbn"];
+
+$result = mysqli_query($con, "select * from book_status join books on book_status.isbn = books.isbn where book_status.isbn=$isbn");
+$row1 = mysqli_fetch_array($result);
 ?>
 
 
+<div class="row">
+    <div class="col">
+        <div class="container my-3">
 
-<div class="container my-4">
-
-    <h1 style="text-align: center;">View Book</h1>
+            <h2 style="text-align: center;">View Book</h2>
+        </div>
+    </div>
 </div>
 
 
-<div class="container my-4">
-    <table class="table" id="myTable">
-        <thead class="thead">
-            <tr>
-                <td>ISBN</td>
-                <td>Book ID</td>
-                <td>Status</td>
-                <td>Action</td>
-            </tr>
-        </thead>
+<div class="row">
+    <div class="col-xl-4">
+    <div class="book_card">
+            <img src="<?php echo $row1["photo"] ?>" >
+            <div class="descriptions">
+                <h1><?php echo $row1["b_name"] ?></h1><br/>
+                <h5>ISBN : <?php echo $isbn ?></h5><br/>
+                <p>
+                    <b>Author</b> : <?php echo $row1["author"] ?><br/></br>
+                    <b>Description</b> : <?php echo $row1["b_description"] ?><br/><br/>
+                    <b>Year of publication</b> : <?php echo $row1["year"] ?><br/><br/>
+                    <b>Language</b> : <?php echo $row1["language"] ?>
+                </p>
+            </div>
+    </div>
+    </div>
 
-        <tbody>
-            <?php
+    <div class="col-xl-8">
+        <div class="container-fluid my-4">
+            <table class="table" id="myTable">
+                <thead class="thead">
+                    <tr>
+                        <td>ISBN</td>
+                        <td>Book ID</td>
+                        <td>Status</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
 
-            $result = mysqli_query($con, "select * from book_status where isbn=$isbn");
-            while ($row = mysqli_fetch_array($result)) {
-                $status=$row["status"];
-                if ($status === "0") {
-                    
-                    $r_status = '<p style="text-align:center; color:white; background-color:green;">Available</p>';
-                    
-                } else {
+                <tbody>
+                    <?php
+
                    
-                    $r_status = '<p style="text-align:center; color:black; background-color:RED;">Acquired</p>';
-                   
-                }
-                echo '
+                    while ($row = mysqli_fetch_array($result)) {
+                        $status = $row["status"];
+                        if ($status === "0") {
+
+                            $r_status = '<p style="text-align:center; color:white; background-color:green;">Available</p>';
+                        } else {
+
+                            $r_status = '<p style="text-align:center; color:black; background-color:RED;">Acquired</p>';
+                        }
+                        echo '
                 <tr>
                     <td>' . $row["isbn"] . '</td>
                     <td>' . $row["b_id"] . '</td>
@@ -54,12 +76,14 @@ $isbn=$_GET["isbn"];
                     <td><a class="btn btn-danger" href="deletebook.php?b_id=' . $row["b_id"] . '" class="action">DELETE</a></td>
                     </tr>
             ';
-            }
-            ?>
-        </tbody>
+                    }
+                    ?>
+                </tbody>
 
 
-    </table>
+            </table>
+        </div>
+    </div>
 </div>
 
 <div>

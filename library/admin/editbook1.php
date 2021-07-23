@@ -4,10 +4,8 @@
 include '../connect.php';
 
 
-$b_id = $_POST["b_id"];
 $b_name = $_POST["b_name"];
 $b_description = $_POST["b_description"];
-$quantity = $_POST["quantity"];
 $author = $_POST["author"];
 $year = $_POST["year"];
 $category = $_POST["category"];
@@ -37,7 +35,7 @@ if (isset($_POST['submit'])) {
 				$filedestination = 'uploads/' . $filenamenew;
 				move_uploaded_file($filetemp, $filedestination);
 
-				$query = "update books set  b_name='$b_name', b_description='$b_description', quantity='$quantity', author='$author', year='$year', category='$category', isbn='$isbn', photo='$filedestination', language='$language' where b_id='$b_id'  ";
+				$query = "update books set  b_name='$b_name', b_description='$b_description', author='$author', year='$year', category='$category', photo='$filedestination', language='$language' where isbn ='$isbn'  ";
 
 				if (mysqli_query($con, $query)) {
 					header("location:viewbook.php");
