@@ -86,14 +86,14 @@
             flex: 1;
             flex-basis: 300px;
             flex-grow: 0;
-            height: 450px;
-            aspect-ratio: 3 / 4;
+            width: 334px;
+            aspect-ratio: 3 / 4.2;
             background: #fff;
             border: 2px solid #fff;
             box-shadow: 0px 4px 7px rgba(0, 0, 0, .5);
             cursor: pointer;
             transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
-            overflow: hidden;
+            overflow:hidden;
             position: relative;
         }
 
@@ -120,6 +120,7 @@
             left: 0px;
             transition: all .7s ease-in-out;
             clip-path: circle(75%);
+            overflow-y: scroll;
         }
 
         .book_card:hover {
