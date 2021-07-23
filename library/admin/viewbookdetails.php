@@ -48,7 +48,6 @@ $row1 = mysqli_fetch_array($result);
             <table class="table" id="myTable">
                 <thead class="thead">
                     <tr>
-                        <td>ISBN</td>
                         <td>Book ID</td>
                         <td>Status</td>
                         <td>Action</td>
@@ -70,7 +69,6 @@ $row1 = mysqli_fetch_array($result);
                         }
                         echo '
                 <tr>
-                    <td>' . $row["isbn"] . '</td>
                     <td>' . $row["b_id"] . '</td>
                     <td>' . $r_status . '</td>
                     <td><a class="btn btn-danger" href="deletebook.php?b_id=' . $row["b_id"] . '" class="action">DELETE</a></td>
