@@ -1,6 +1,10 @@
 <?php
 session_start();
+if (!$_SESSION['name']) {
+    header("LOCATION: login.php");
+}
 
+$name = $_SESSION['name'];
 include '../connect.php';
 include 'main.php';
 
@@ -46,7 +50,7 @@ $row = mysqli_fetch_array($result);
     <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="b_name" id="book_name" placeholder="Bookname"value="<?php echo $row["b_name"] ?>">
+                <input type="text" class="form-control" name="b_name" id="book_name" placeholder="Bookname"value="<?php echo $row["b_name"] ?>" required>
                 <label for="book_name"> Book Name </label>
             </div>
         </div>
@@ -55,7 +59,7 @@ $row = mysqli_fetch_array($result);
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="b_description" id="description" placeholder="Description" value="<?php echo $row["b_description"] ?>">
+                <input type="text" class="form-control" name="b_description" id="description" placeholder="Description" value="<?php echo $row["b_description"] ?>" required> 
                 <label for="description"> Description </label>
             </div>
         </div>
@@ -65,7 +69,7 @@ $row = mysqli_fetch_array($result);
         <div class="row g-2">
     <div class="col-md">
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" name="quantity" min="1" max="100" id="quantity" placeholder="Quantity" value="<?php echo $row["quantity"] ?>">
+                <input type="number" class="form-control" name="quantity" min="1" max="100" id="quantity" placeholder="Quantity" value="<?php echo $row["quantity"] ?>" readonly required>
                 <label for="quantity"> Quantity </label>
 
             </div>
@@ -75,7 +79,7 @@ $row = mysqli_fetch_array($result);
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="author" id="author" placeholder="Author" value="<?php echo $row["author"] ?>">
+                <input type="text" class="form-control" name="author" id="author" placeholder="Author" value="<?php echo $row["author"] ?>" required>
                 <label for="author"> Author </label>
             </div>
         </div>
@@ -86,7 +90,7 @@ $row = mysqli_fetch_array($result);
     <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="year" id="year" placeholder="Year of publishing" value="<?php echo $row["year"] ?>">
+                <input type="text" class="form-control" name="year" id="year" placeholder="Year of publishing" value="<?php echo $row["year"] ?>" required>
                 <label for="year"> year </label>
             </div>
         </div>
@@ -95,7 +99,7 @@ $row = mysqli_fetch_array($result);
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="category" id="category" placeholder="Category" value="<?php echo $row["category"] ?>">
+                <input type="text" class="form-control" name="category" id="category" placeholder="Category" value="<?php echo $row["category"] ?>" required>
                 <label for="category"> Category </label>
             </div>
         </div>
@@ -106,7 +110,7 @@ $row = mysqli_fetch_array($result);
         <div class="col-md">
             <div class="form-floating mb-3">
 
-                <input type="text" class="form-control" name="language" id="language" placeholder="Language" value="<?php echo $row["language"] ?>">
+                <input type="text" class="form-control" name="language" id="language" placeholder="Language" value="<?php echo $row["language"] ?>" required>
                 <label for="language"> Language </label>
             </div>
         </div>
@@ -114,7 +118,7 @@ $row = mysqli_fetch_array($result);
         <div class="col-md">
             <div><label for="file"> Photo </label>
 
-                <input type="file" class="form-control" name="file" id="file" value="<?php echo $row["photo"] ?>">
+                <input type="file" class="form-control" name="file" id="file" value="<?php echo $row["photo"] ?>" required>
             </div>
         </div>
     </div>

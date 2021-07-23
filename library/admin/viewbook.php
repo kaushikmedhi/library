@@ -25,12 +25,9 @@ include 'main.php';
                 <td>Photo</td>
                 <td>ISBN</td>
                 <td>Name</td>
-                <td>Description</td>
                 <td>quantity</td>
                 <td>Author</td>
-                <td>Year of publication</td>
                 <td>Category</td>
-                <td>Language</td>
                 <td>Action</td>
             </tr>
         </thead>
@@ -45,12 +42,9 @@ include 'main.php';
                     <td><img src="' . $row['photo'] . '" width="80" height="120"></td>
                     <td>' . $row["isbn"] . '</td>
                     <td>' . $row["b_name"] . '</td>
-                    <td>' . $row["b_description"] . '</td>
                     <td>' . $row["quantity"] . '</td>
                     <td>' . $row["author"] . '</td>
-                    <td>' . $row["year"] . '</td>
                     <td>' . $row["category"] . '</td>
-                    <td>' . $row["language"] . '</td>
                     <td><a class="btn btn-primary" href="editbook.php?isbn=' . $row["isbn"] . '">EDIT</a>
                     <a class="btn btn-warning" href="viewbookdetails.php?isbn=' . $row["isbn"] . '" class="action">DETAILS</a></td>
                     </tr>
