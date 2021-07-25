@@ -120,7 +120,7 @@
             left: 0px;
             transition: all .7s ease-in-out;
             clip-path: circle(75%);
-            overflow-y: scroll;
+            overflow-y:auto;
         }
 
         .book_card:hover {
@@ -239,6 +239,6 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Admin Panel </h1>
-                    <ol class="breadcrumb mb-4">
+                    <ol class="breadcrumb mb-1">
                         <li class="breadcrumb-item active"><?php echo ("Welcome $name"); ?></li>
                     </ol>
