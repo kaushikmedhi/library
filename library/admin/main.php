@@ -86,14 +86,14 @@
             flex: 1;
             flex-basis: 300px;
             flex-grow: 0;
-            height: 450px;
-            aspect-ratio: 3 / 4;
+            width: 334px;
+            aspect-ratio: 3 / 4.2;
             background: #fff;
             border: 2px solid #fff;
             box-shadow: 0px 4px 7px rgba(0, 0, 0, .5);
             cursor: pointer;
             transition: all .5s cubic-bezier(.8, .5, .2, 1.4);
-            overflow: hidden;
+            overflow:hidden;
             position: relative;
         }
 
@@ -120,6 +120,7 @@
             left: 0px;
             transition: all .7s ease-in-out;
             clip-path: circle(75%);
+            overflow-y:auto;
         }
 
         .book_card:hover {
@@ -238,6 +239,6 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Admin Panel </h1>
-                    <ol class="breadcrumb mb-4">
+                    <ol class="breadcrumb mb-1">
                         <li class="breadcrumb-item active"><?php echo ("Welcome $name"); ?></li>
                     </ol>

@@ -18,7 +18,7 @@ $row1 = mysqli_fetch_array($result);
 
 <div class="row">
     <div class="col">
-        <div class="container my-3">
+        <div class="container mt-3 mb-5">
 
             <h2 style="text-align: center;">View Book</h2>
         </div>
@@ -28,8 +28,8 @@ $row1 = mysqli_fetch_array($result);
 
 <div class="row">
     <div class="col-xl-4">
-        <div class="book_card">
-            <img src="<?php echo $row1["photo"] ?>">
+    <div class="book_card mx-auto">
+            <img src="<?php echo $row1["photo"] ?>" >
             <div class="descriptions">
                 <h1><?php echo $row1["b_name"] ?></h1><br />
                 <h5>ISBN : <?php echo $isbn ?></h5><br />
@@ -44,7 +44,7 @@ $row1 = mysqli_fetch_array($result);
     </div>
 
     <div class="col-xl-8">
-        <div class="container-fluid my-4">
+        <div class="container-fluid">
             <table class="table" id="myTable">
                 <thead class="thead">
                     <tr>
@@ -99,15 +99,7 @@ $row1 = mysqli_fetch_array($result);
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable({
-                responsive: true
-            });
-
-        });
-    </script>
+    
 </div>
 </body>
 

@@ -45,6 +45,7 @@ $ss_id = $row1["s_id"];
     body {
         padding: 0px;
         margin: 0px;
+        overflow-x: hidden;
     }
 
     ::-webkit-scrollbar {
