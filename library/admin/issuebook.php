@@ -144,11 +144,13 @@ include 'main.php';
             // Assign the value received to
             // other input field
             document.getElementById("name").value = myObj[1];;
-            if (myObj[2] == 1) {
+            if (myObj[2] == 1 || myObj[2] === null) {
               disableBook = true;
+              if(myObj[2] == 1){
               document.getElementById("status").value = "Acquired";
               document.getElementById("status").classList.add("text-white", "bg-danger", "fw-bolder");
               document.getElementById("status").classList.remove("bg-success");
+              }
 
             } else if (myObj[2] == 0 && myObj[2] != "") {
               disableBook = false;
