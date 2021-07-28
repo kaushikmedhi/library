@@ -31,16 +31,16 @@ $row1 = mysqli_fetch_array($result);
     <div class="book_card mx-auto">
             <img src="<?php echo $row1["photo"] ?>" >
             <div class="descriptions">
-                <h1><?php echo $row1["b_name"] ?></h1><br/>
-                <h5>ISBN : <?php echo $isbn ?></h5><br/>
+                <h1><?php echo $row1["b_name"] ?></h1><br />
+                <h5>ISBN : <?php echo $isbn ?></h5><br />
                 <p>
-                    <b>Author</b> : <?php echo $row1["author"] ?><br/></br>
-                    <b>Description</b> : <?php echo $row1["b_description"] ?><br/><br/>
-                    <b>Year of publication</b> : <?php echo $row1["year"] ?><br/><br/>
+                    <b>Author</b> : <?php echo $row1["author"] ?><br /></br>
+                    <b>Description</b> : <?php echo $row1["b_description"] ?><br /><br />
+                    <b>Year of publication</b> : <?php echo $row1["year"] ?><br /><br />
                     <b>Language</b> : <?php echo $row1["language"] ?>
                 </p>
             </div>
-    </div>
+        </div>
     </div>
 
     <div class="col-xl-8">
@@ -57,7 +57,7 @@ $row1 = mysqli_fetch_array($result);
                 <tbody>
                     <?php
 
-                   
+                    $result = mysqli_query($con, "select * from book_status where isbn=$isbn");
                     while ($row = mysqli_fetch_array($result)) {
                         $status = $row["status"];
                         if ($status === "0") {
