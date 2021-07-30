@@ -71,7 +71,7 @@ $row1 = mysqli_fetch_array($result);
                 <tr>
                     <td>' . $row["b_id"] . '</td>
                     <td>' . $r_status . '</td>
-                    <td><a class="btn btn-danger" href="deletebook.php?b_id=' . $row["b_id"] . '" class="action">DELETE</a></td>
+                    <td><a class="btn btn-danger action" href="deletebook.php?b_id=' . $row["b_id"] . '">DELETE</a></td>
                     </tr>
             ';
                     }
