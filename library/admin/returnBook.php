@@ -128,8 +128,8 @@ if (isset($_GET['s_id'])) {
 							</div>';
 		}
 	} else if (!$alreadyGetData && isset($_POST['inputsearch'])) {
-		$b_id = $_POST['inputsearch'];
-		$sql = 'SELECT * FROM (((book_issue INNER JOIN student ON book_issue.s_id = student.s_id) INNER JOIN book_status ON book_issue.b_id = book_status.b_id )INNER JOIN books ON book_status.isbn=books.isbn) WHERE book_issue.b_id =' . $b_id . ' and book_issue.issue_status=' . '"ACQ"';
+		$s_id = $_POST['inputsearch'];
+		$sql = 'SELECT * FROM (((book_issue INNER JOIN student ON book_issue.s_id = student.s_id) INNER JOIN book_status ON book_issue.b_id = book_status.b_id )INNER JOIN books ON book_status.isbn=books.isbn) WHERE book_issue.s_id =' . $s_id . ' and book_issue.issue_status=' . '"ACQ"';
 
 		$result1 = mysqli_query($con, $sql);
 		echo mysqli_error($con);
