@@ -91,8 +91,7 @@ if (isset($_GET['s_id'])) {
 			    			<table class="table" id="myTable">
 			        			<thead class="thead">
 			            			<tr>
-			            				<td>Select</td>
-			            					<td>Transaction Id</td>
+			            				<td>Transaction Id</td>
 			                			<td>Student ID</td>
 			                			<td>Name</td>
 			                			<td>Book Id</td>
@@ -107,7 +106,6 @@ if (isset($_GET['s_id'])) {
 			        			<tbody>
 
 							        <tr>
-							        	<td><input type="checkbox" name="check_list[]" disabled="disabled"></td>
 							        	<td style="vertical-align:middle;">' . $t_id . '</td>
 							        	<td style="vertical-align:middle;">' . $s_id . '</td>
 							            <td style="vertical-align:middle;">' . $s_name . '</td>
@@ -137,7 +135,6 @@ if (isset($_GET['s_id'])) {
 			    			<table class="table" id="myTable1">
 			        			<thead class="thead">
 			            			<tr>
-			            				<td>Select</td>
 			            				<td>Transaction Id</td>
 			                			<td>Student ID</td>
 			                			<td>Name</td>
@@ -166,7 +163,6 @@ if (isset($_GET['s_id'])) {
 			'
 
 							        <tr>
-							        <td style="vertical-align:middle;"><input type="checkbox" name="check_list[]"></td>
 							        <td style="vertical-align:middle;">' . $row["transaction_id"] . '</td>
 							        <td style="vertical-align:middle;">' . $row["s_id"] . '</td>
 						            <td style="vertical-align:middle;">' . $row["s_name"] . '</td>
@@ -195,7 +191,7 @@ if (isset($_GET['s_id'])) {
 		if (document.getElementById('submit')) {
 			document.getElementById("submit").addEventListener("click", checkoutBooks, true);
 		}
-		document.getElementById("checkall").addEventListener("click", multipleCheckout, true);
+		document.getElementById("checkall").addEventListener("click", checkoutBooks, true);
 
 		function checkoutBooks() {
 			let t_id = <?php echo $t_id ?>;
@@ -222,57 +218,6 @@ if (isset($_GET['s_id'])) {
 
 		}
 
-		function multipleCheckout() {
-			var n1 = document.getElementById("myTable1").rows.length;
-			var checkboxes = document.getElementById("myTable1").getElementsByTagName("input");
-			var i = 0;
-			var j = 0;
-			var param = [];
-			var param = new Parameter();
-			for (i = 1; i < n1; i++) {
-				var data = document.getElementById("myTable1").rows[i];
-				let selected = checkboxes[j].checked;
-				let tran_id = data.cells.item(1).innerHTML;
-				let fine = data.cells.item(8).innerHTML;
-				console.log(tran_id + " " + fine + " " + selected);
-				var p = new Parameter();
-				if (selected) {
-					p.t_id = tran_id;
-					p.fine = fine;
-					param[j] = p;
-				}
-				j++;
-
-
-			}
-			let payload = JSON.stringify(param);
-			console.log(payload);
-
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function() {
-
-				if (this.readyState == 4 &&
-					this.status == 200) {
-					console.log(this.responseText);
-					if (this.responseText.trim() === 'true') {
-						alert("returned book successfull");
-						window.location.href = "returnBook.php";
-					} else {
-						alert("error while returned, please checkout again");
-					}
-
-				}
-			};
-
-			xmlhttp.open("POST", "returnBook2.php", true);
-			xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-			xmlhttp.send("data=" + payload);
-		}
-
-		class Parameter {
-
-		}
 	</script>
 
 
