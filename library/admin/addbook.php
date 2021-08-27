@@ -18,7 +18,7 @@ include 'main.php';
 
 
 
-<h1 style="text-align: center;">Input Form</h1>
+<br><h1 style="text-align: center;">Please Enter Book Details</h1><br><br>
 
 
 <form action="addbook1.php" method="POST" enctype="multipart/form-data">

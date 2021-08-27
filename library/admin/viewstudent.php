@@ -9,58 +9,61 @@ $name = $_SESSION['name'];
 include '../connect.php';
 include 'main.php';
 ?>
+<html>
+    <body>
+    <div class="container my-4">
+
+<h1 style="text-align: center;">View Student</h1>
+</div>
+
+
+<div class="container my-4">
+<table class="table" id="myTable">
+    <thead class="thead">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>E-mail</td>
+            <td>Phone</td>
+            <td>Address</td>
+            <td>Department</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php
+
+        $result = mysqli_query($con, "select * from student");
+        while ($row = mysqli_fetch_array($result)) {
+            echo '
+            <tr>
+                <td>' . $row["s_id"] . '</td>
+                <td>' . $row["s_name"] . '</td>
+                <td>' . $row["s_email"] . '</td>
+                <td>' . $row["s_phone"] . '</td>
+                <td>' . $row["s_address"] . '</td>
+                <td>' . $row["department"] . '</td>
+                <td><button class="btn btn-primary"><a href="editstudent.php?s_id=' . $row["s_id"] . '">EDIT</a></button>
+                    <button class="btn btn-danger"><a href="deletestudent.php?s_id=' . $row["s_id"] . '" class="action">DELETE</a></button></td>
+            </tr>
+        ';
+        }
+        ?>
+    </tbody>
+
+
+</table>
+</div>
+
+<div>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
-<div class="container my-4">
 
-    <h1 style="text-align: center;">View Student</h1>
-</div>
-
-
-<div class="container my-4">
-    <table class="table" id="myTable">
-        <thead class="thead">
-            <tr>
-                <td>ID</td>
-                <td>Name</td>
-                <td>E-mail</td>
-                <td>Phone</td>
-                <td>Address</td>
-                <td>Department</td>
-                <td>Action</td>
-            </tr>
-        </thead>
-
-        <tbody>
-            <?php
-
-            $result = mysqli_query($con, "select * from student");
-            while ($row = mysqli_fetch_array($result)) {
-                echo '
-                <tr>
-                    <td>' . $row["s_id"] . '</td>
-                    <td>' . $row["s_name"] . '</td>
-                    <td>' . $row["s_email"] . '</td>
-                    <td>' . $row["s_phone"] . '</td>
-                    <td>' . $row["s_address"] . '</td>
-                    <td>' . $row["department"] . '</td>
-                    <td><button class="btn btn-primary"><a href="editstudent.php?s_id=' . $row["s_id"] . '">EDIT</a></button>
-                        <button class="btn btn-danger"><a href="deletestudent.php?s_id=' . $row["s_id"] . '" class="action">DELETE</a></button></td>
-                </tr>
-            ';
-            }
-            ?>
-        </tbody>
-
-
-    </table>
-</div>
-
-<div>
 
 
 
@@ -81,7 +84,5 @@ include 'main.php';
 
         });
     </script>
-</div>
-</body>
-
+    </body>
 </html>

@@ -1,6 +1,11 @@
 <?php
-session_start();
 
+session_start();
+if (!$_SESSION['name']) {
+    header("LOCATION: login.php");
+}
+
+$name = $_SESSION['name'];
 
 include '../connect.php';
 include 'main.php';

@@ -51,7 +51,7 @@ if (isset($_GET['s_id'])) {
 						</div>
 
 						<div class="col">
-							<input class="form-control form-control-lg form-control-borderless" type="search" name="inputsearch" placeholder="Search with Book id">
+							<input class="form-control form-control-lg form-control-borderless"  type="search" name="inputsearch" placeholder="Search with Book id" required>
 						</div>
 
 						<div class="col-auto">
