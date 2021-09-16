@@ -27,7 +27,7 @@ $sql4 = ("SELECT count(b_id) FROM book_status where status = 0");
 $result4 = mysqli_query($con, $sql4);
 $available_book = mysqli_fetch_array($result4);
 
-$sql5 = ("SELECT distinct count(b_id) FROM book_issue where issue_status='RET'");
+$sql5 = ("SELECT count(b_id) FROM delete_book");
 $result5 = mysqli_query($con, $sql5);
 $total_returned_book = mysqli_fetch_array($result5);
 
@@ -76,9 +76,9 @@ echo mysqli_error($con);
     </div>
     <div class="col">
         <div class="card bg-info text-white mb-4">
-            <div class="card-body">Return book: <?php echo $total_returned_book[0]; ?></div>
+            <div class="card-body">Lost/Damaged Books: <?php echo $total_returned_book[0]; ?></div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="returnBook.php">View Details</a>
+                <a class="small text-white stretched-link" href="deleted-books.php">View Details</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
