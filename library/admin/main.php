@@ -43,6 +43,15 @@
                 return true;
             });
         });
+        $(document).ready(function() {
+            $("input.action").click(function(e) {
+                if (!confirm('Are you sure?')) {
+                    e.preventDefault();
+                    return false;
+                }
+                return true;
+            });
+        });
     </script>
 
     <style>
@@ -226,6 +235,11 @@
 
                             </nav>
                         </div>
+
+                        <a class="nav-link" href="deleted-books.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Deleted Books
+                        </a>
 
                     </div>
                 </div>

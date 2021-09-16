@@ -21,7 +21,7 @@ include 'main.php';
 <body>
 <div class="container my-4">
 
-<h1 style="text-align: center;">View Book</h1>
+<h1 style="text-align: center;">Deleted Books</h1>
 </div>
 
 
@@ -29,32 +29,29 @@ include 'main.php';
 <table class="table" id="myTable">
     <thead class="thead">
         <tr>
-            <td>Photo</td>
+            <td>Book ID</td>
             <td>ISBN</td>
             <td>Name</td>
-            <td>Total quantities</td>
             <!-- <td>Available quantities</td> -->
-            <td>Author</td>
-            <td>Category</td>
-            <td>Action</td>
+            <td>Date</td>
+            <td>Reason</td>
+            <td>By</td>
         </tr>
     </thead>
 
     <tbody>
         <?php
      
-        $result = mysqli_query($con, "select * from books");
+        $result = mysqli_query($con, "select * from delete_book");
         while ($row = mysqli_fetch_array($result)) {
             echo '
             <tr>
-                <td><img src="' . $row['photo'] . '" width="80" height="120"></td>
+                <td>' . $row["b_id"] . '</td>
                 <td>' . $row["isbn"] . '</td>
                 <td>' . $row["b_name"] . '</td>
-                <td>' . $row["quantity"] . '</td>
-                <td>' . $row["author"] . '</td>
-                <td>' . $row["category"] . '</td>
-                <td><a class="btn btn-primary" href="editbook.php?isbn=' . $row["isbn"] . '">EDIT</a>
-                <a class="btn btn-info" href="viewbookdetails.php?isbn=' . $row["isbn"] . '" class="action">DETAILS</a></td>
+                <td>' . $row["date"] . '</td>
+                <td>' . $row["reason"] . '</td>
+                <td>' . $row["by_person"] . '</td>
                 </tr>
         ';
         }
